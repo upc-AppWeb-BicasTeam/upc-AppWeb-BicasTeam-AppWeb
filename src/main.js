@@ -8,9 +8,11 @@ import 'primevue/resources/primevue.min.css'
 import 'primeicons/primeicons.css'
 import 'primeicons/primeicons.css'
 import PrimeVue from "primevue/config";
+import router from "./router/index.js";
 
 const app = createApp(App);
 app.use(PrimeVue,{ripple:true})
+    .use(router)
 
 
 app.mount('#app')
