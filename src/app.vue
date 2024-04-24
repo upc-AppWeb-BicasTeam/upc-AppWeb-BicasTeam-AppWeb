@@ -4,7 +4,7 @@ export default {
   data() {
     return {
       items: [
-        {label: 'Report', to: '/report/view'}
+        {label: 'Report View', to: '/report/view'}
       ]
     }
   }
@@ -14,8 +14,8 @@ export default {
 <template>
   <pv-toolbar class="bg-primary" fixed>
     <template #start>
-      <h3>ACME Learning Center</h3>
-      <div class="flex-column">
+      <h3>MoviGestion</h3>
+      <div>
         <router-link v-for="item in items" :key="item.label" v-slot="{navigate, href}" :to="item.to" custom>
           <pv-button :href="href" class="p-button-text text-white" @click="navigate">{{item.label}}</pv-button>
         </router-link>

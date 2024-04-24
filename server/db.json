@@ -4,34 +4,31 @@
       "id": 1,
       "name": "Josep Doe",
       "description": "Dear, there is traffic on Higuereta Oval. Please warn nearby drivers not to come this way.",
-      "dateTime": [
-        {
-          "date": "2024-03-10",
-          "time": "10:25:00"
-        }
-      ]
+      "dateTime":
+      {
+        "date": "2024-03-10",
+        "time": "10:25:00"
+      }
     },
     {
       "id": 2,
       "name": "Arnold Smith",
       "description": "Paseo de Republica Avenue is free this time.",
-      "dateTime": [
-        {
-          "date": "2024-03-27",
-          "time": "13:40:00"
-        }
-      ]
+      "dateTime":
+      {
+        "date": "2024-03-27",
+        "time": "13:40:00"
+      }
     },
     {
       "id": 3,
       "name": "Whitney Houston",
       "description": "There was an accident between Javier Prado Av. and Aviacion Av. Please take precautions.",
-      "dateTime": [
-        {
-          "date": "2024-04-05",
-          "time": "09:55:00"
-        }
-      ]
+      "dateTime":
+      {
+        "date": "2024-04-05",
+        "time": "09:55:00"
+      }
     }
   ]
 }

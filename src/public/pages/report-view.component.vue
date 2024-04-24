@@ -1,5 +1,4 @@
 <script>
-import {Driver} from "../../report-view/model/driver.entity.js";
 import {ReportsApiService} from "../../report-view/services/reports-api.service.js";
 
 export default {
@@ -16,46 +15,32 @@ export default {
   },
   methods: {
     getDataDriver(){
-      this.reportsApi.getReports()
+      this.reportsApi.getAllReports()
           .then(response => {
             this.reports = response.data;
-          }).catch(error => {console.error("Error fetching drivers:", error);})
+            console.log(response.data);
+            console.log(this.reports);
+          })
     }
   }
 }
 </script>
-<!--
-<template>
-  <div class="w-full align-content-center">
-    <h1>Report</h1>
-    <p>Welcome to Report to Businessman.</p>
 
-    <div class="card">
-      <pv-table :value="reports" scrollable scrollHeight="400px" tableStyle="min-width: 50rem">
-        <Column field="name" header="Name"></Column>
-        <Column field="description" header="Description"></Column>
-      </pv-table>
-    </div>
+<template>
+  <div>
+    <h1>Reports</h1>
+    <p>Driver report list</p>
   </div>
-</template>-->
 
-<template>
-  <div class="w-full align-content-center">
-    <table>
-      <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Descripción</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="report in reports" :key="report.id">
-        <td>{{ report.id }}</td>
-        <td>{{ report.name }}</td>
-        <td>{{ report.description }}</td>
-      </tr>
-      </tbody>
-    </table>
+  <div>
+    <pv-card>
+      <template #content>
+        <pv-table :value="reports">
+          <pv-column field="name" header="Driver’s Name"></pv-column>
+          <pv-column field="description" header="Description"></pv-column>
+          <pv-column field="dateTime.date" header="Date"></pv-column>
+        </pv-table>
+      </template>
+    </pv-card>
   </div>
 </template>
