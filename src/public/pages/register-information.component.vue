@@ -3,7 +3,7 @@ export default {
   name: "register-information",
   data(){
     return{
-      type: this.$route.query.type
+      type: this.$route.params.type
     }
   },
 

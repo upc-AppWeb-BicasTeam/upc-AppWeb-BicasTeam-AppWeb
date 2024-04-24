@@ -9,7 +9,6 @@ export default {
   },
   created() {
     document.body.style.backgroundColor = '#303841';
-
   },
   methods:{
     cleanCss() {
@@ -18,6 +17,9 @@ export default {
     typeSelection(type){
       this.type = type;
       console.log(this.type)
+    },
+    goToRegisterUserInformation(){
+      this.$router.push(`register/${this.type}`)
     }
   }
 }
@@ -33,8 +35,8 @@ export default {
       <h1>Register as</h1>
       <!-- Botones -->
       <div class="buttons">
-        <button class="btn" @click="typeSelection('businessman')"> &nbsp <i class="pi pi-user"/> &nbsp <router-link :to="{path:'/register/information',query:{type: this.type}}" @click.native="cleanCss" >Businessman</router-link> </button>
-        <button class="btn" @click="typeSelection('carrier')"> &nbsp <i class="pi pi-user"/> &nbsp <router-link :to="{path:'/register/information',query:{type: this.type}}" @click.native="cleanCss" >Carrier</router-link></button>
+        <button class="btn" @click="typeSelection('businessman');goToRegisterUserInformation()"> &nbsp <i class="pi pi-user"/> &nbsp Businessman </button>
+        <button class="btn" @click="typeSelection('carrier');goToRegisterUserInformation()"> &nbsp <i class="pi pi-user"/> &nbsp Carrier </button>
       </div>
       <!-- Go to Log in-->
       <div>
