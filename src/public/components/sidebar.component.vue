@@ -14,7 +14,7 @@ export default {
 <template>
   <div class="card flex justify-content-center justify-content-between flex-column-">
     <pv-sidebar visible="visible" :showCloseIcon="false" :showHeader="false">
-      <div class="flex flex-column align-items-left h-full justify-content-around">
+      <div class="flex flex-column align-items-left h-full justify-content-around z-1">
         <div class="flex justify-content-center align-items-center mr-6">
           <pv-avatar image="https://www.gravatar.com/avatar/05dfd4b41340d09cae045235eb0893c3?d=mp" class="mr-2 flex align-items-center justify-content-center" size="xlarge" shape="circle"></pv-avatar>
           <div class="m-2">
@@ -59,5 +59,22 @@ export default {
   </div>
 </template>
 
-<style scoped>
+<style>
+.p-sidebar-header{
+  display:none;
+}
+
+.p-sidebar{
+  background-color: #303841;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.p-sidebar-mask{
+  z-index: 0 !important;
+}
+body{
+  background-color: #5D6D7E;
+}
+
 </style>
