@@ -72,7 +72,11 @@ export default {
 }
 
 .p-button{
-  background-color: #6251C9;
+  background-color: #6366f1;
+}
+
+.p-button-label{
+  color: #ffffff;
 }
 
 .flex-row{
