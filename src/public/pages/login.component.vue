@@ -18,10 +18,7 @@ export default {
   },
   methods:{
     login(){
-      let json = {
-        "email" : this.email,
-        "password": this.password
-      };
+
       this.iamApi.findUserWithEmailAndPassword(this.email,this.password).then(data=>{
         const info = data.data[0];
         if (info === undefined){
