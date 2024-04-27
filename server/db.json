@@ -1,14 +1,16 @@
 {
-  "name-endpoint": [
+  "vehicles": [
     {
       "id": 1,
-      "value1": "Value 1",
-      "value2": "Value2"
+      "licensePlate": "AAA-321",
+      "model": "Chevrolet Corvette",
+      "serialNumber": "IO547SMX"
     },
     {
       "id": 2,
-      "value1": "Value 3",
-      "value2": "Value4"
+      "licensePlate": "ABC-123",
+      "model": "KIA Rio",
+      "serialNumber": "RQ9ZRQ49"
     }
   ]
 }
