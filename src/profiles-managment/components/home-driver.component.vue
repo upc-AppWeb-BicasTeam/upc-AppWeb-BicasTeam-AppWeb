@@ -1,5 +1,5 @@
 <script>
-import { HomeApiService } from "../../learning/services/home-api.service.js";
+import { HomeApiService } from "../services/home-api.service.js";
 
 export default {
   name: "home",
@@ -70,7 +70,7 @@ export default {
 </template>
 
 <style scoped>
-@import 'font-awesome/css/font-awesome.min.css';
+
 .w-full {
   color: white;
   display: flex;

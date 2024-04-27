@@ -92,7 +92,7 @@ export default {
 </template>
 
 <style scoped>
-@import 'font-awesome/css/font-awesome.min.css';
+
 .w-full {
   color: white;
   display: flex;
@@ -265,10 +265,7 @@ export default {
 }
 
 .date-time p4 {
-  /* Añade tus estilos aquí */
-
-  /* Por ejemplo, para moverlo un poco a la derecha */
-  margin-left: 300px; /* Ajusta este valor a tu gusto */
+  margin-left: 300px;
   margin-top: 10px;
 }
 
