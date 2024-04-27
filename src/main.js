@@ -14,10 +14,16 @@ import Button from "primevue/button";
 import DataTable from "primevue/datatable";
 import Card from "primevue/card";
 import Column from "primevue/column";
+import Sidebar from "primevue/sidebar";
+import ToastService from "primevue/toastservice";
+import Avatar from "primevue/avatar";
 
 const app = createApp(App);
 app.use(PrimeVue,{ripple:true})
+    .use(ToastService)
     .use(router)
+    .component('pv-sidebar', Sidebar)
+    .component('pv-avatar', Avatar)
     .component('pv-toolbar', Toolbar)
     .component('pv-button', Button)
     .component('pv-table', DataTable)
