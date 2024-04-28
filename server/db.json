@@ -6,7 +6,6 @@
       "password": "admin",
       "type": "carrier"
     }
-<<<<<<< HEAD
   ],
   "activities": [
     {
@@ -64,7 +63,6 @@
       "package": "television",
       "shipping": "3:00 a.m."
     }
-=======
->>>>>>> parent of f71b192 (fix(components ubication): fix componets in profiles managment bounded context)
+
   ]
 }

@@ -29,7 +29,7 @@ export default {
 <template>
   <div class="w-full align-content-center">
     <div class="welcome-container">
-      <h1 class="title">Welcome, Elias Doe!</h1>
+      <h1 class="title">Welcome, Jhon Doe!</h1>
       <img src="../../public/assets/logo.png" id="icon" alt="User Icon" class="custom-image">
     </div>
     <p class="subtitle">Let's start</p>
@@ -92,7 +92,7 @@ export default {
 </template>
 
 <style scoped>
-
+@import 'font-awesome/css/font-awesome.min.css';
 .w-full {
   color: white;
   display: flex;
@@ -265,7 +265,10 @@ export default {
 }
 
 .date-time p4 {
-  margin-left: 300px;
+  /* Añade tus estilos aquí */
+
+  /* Por ejemplo, para moverlo un poco a la derecha */
+  margin-left: 300px; /* Ajusta este valor a tu gusto */
   margin-top: 10px;
 }
 
