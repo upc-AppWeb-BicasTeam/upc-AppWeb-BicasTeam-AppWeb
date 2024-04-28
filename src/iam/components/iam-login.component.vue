@@ -24,7 +24,7 @@ export default {
         if (info === undefined){
           this.error = true; this.error_msg = "Email or Password incorrect"
         }else{
-          info.type === "businessman" ? this.$router.push('/home-bussinessman') : this.$router.push('/home-carrier') ;
+          info.type === "businessman" ? this.$router.push('/home-businessman') : this.$router.push('/home-carrier') ;
         }
       })
     },

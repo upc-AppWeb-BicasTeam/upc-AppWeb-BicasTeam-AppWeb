@@ -1,5 +1,5 @@
 <script>
-import { HomeApiService } from "../../learning/services/home-api.service.js";
+import { HomeApiService } from "../services/home-api.service.js";
 
 export default {
   name: "home",
@@ -27,7 +27,7 @@ export default {
   <div class="w-full align-content-center">
     <div class="welcome-container">
       <h1 class="title">Welcome, David Doe!</h1>
-      <img src="../../assets/logo.png" id="icon" alt="User Icon" class="custom-image">
+      <img src="../../public/assets/logo.png" id="icon" alt="User Icon" class="custom-image">
     </div>
     <p class="subtitle">Let's start</p>
     <div class="card-container">
