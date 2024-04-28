@@ -1,14 +1,34 @@
 {
-  "name-endpoint": [
+  "shipment": [
     {
       "id": 1,
-      "value1": "Value 1",
-      "value2": "Value2"
+      "name": "Josep Doe",
+      "description": "The package to be delivered is a 40-inch smart TV.",
+      "dateTime": {
+        "date": "2024-04-25",
+        "time": "10:25:00"
+      },
+      "status": "Programmed"
     },
     {
       "id": 2,
-      "value1": "Value 3",
-      "value2": "Value4"
+      "name": "Arnold Doe",
+      "description": "Delivery of a sound system. Be careful when lowering it.",
+      "dateTime": {
+        "date": "2024-04-17",
+        "time": "13:30:00"
+      },
+      "status": "In delivery"
+    },
+    {
+      "id": 3,
+      "name": "Whitney Doe",
+      "description": "Package with hardware elements for a gamer pc.",
+      "dateTime": {
+        "date": "2024-03-18",
+        "time": "15:45:00"
+      },
+      "status": "Delivered"
     }
   ]
 }

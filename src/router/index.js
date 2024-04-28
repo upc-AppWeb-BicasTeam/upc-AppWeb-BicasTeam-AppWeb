@@ -1,10 +1,10 @@
 import {createRouter, createWebHistory} from "vue-router";
+import OrganizationShipmentComponent from "../public/pages/organization-shipment.component.vue";
+
 const router  = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/home', component: Componet1},
-        { path: '/about', component: Componet2},
-        { path: '/', redirect: '/home'}
+        { path: '/organization', component: OrganizationShipmentComponent}
     ]
 });
 export default router;
