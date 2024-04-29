@@ -70,6 +70,7 @@ export default {
 .p-inputtext{
   background: #ffffff;
   border: 1px solid #ced4da;
+  color: #000000;
 }
 
 .p-inputtextarea{
