@@ -9,9 +9,14 @@ export default defineComponent({
 </script>
 
 <template>
-  <sidebar-public/>
-  <cya-vehicles-carrier/>
+  <div class="container">
+    <sidebar-public/>
+    <cya-vehicles-carrier/>
+  </div>
 </template>
 
 <style scoped>
+.container{
+  display: flex;
+}
 </style>
