@@ -1,3 +1,4 @@
+
 <script>
 import { HomeApiService } from "../services/home-api.service.js";
 
@@ -25,83 +26,91 @@ export default {
   },
 }
 </script>
-
 <template>
-  <div class="w-full align-content-center">
-    <div class="welcome-container">
-      <h1 class="title">Welcome, Jhon Doe!</h1>
-      <img src="../../public/assets/logo.png" id="icon" alt="User Icon" class="custom-image">
-    </div>
-    <p class="subtitle">Let's start</p>
-    <div class="card-container">
-      <div class="card" v-if="activities.length">
-        <h2 class="card-title"><i class="fa fa-list"></i>Today's activities</h2>
-        <div class="card-content">
-          <div class="activity" v-for="activity in activities" :key="activity.id">
-            <div class="card-content1">
-              <h3>{{ activity.title }}</h3>
-              <div class="date-time"> <!-- Añadido este div -->
-                <p>{{ activity.date }}</p>
-                <p1>{{ activity.time }}</p1>
+  <div class="p-5 flex flex-row flex-auto container z-1">
+    <div>
+      <div class="w-full align-content-center">
+        <div class="welcome-container">
+          <h1 class="title">Welcome, Jhon Doe!</h1>
+          <img src="../../public/assets/logo.png" id="icon" alt="User Icon" class="custom-image">
+        </div>
+        <p class="subtitle">Let's start</p>
+        <div class="card-container">
+          <div class="card" v-if="activities.length">
+            <h2 class="card-title"><i class="fa fa-list"></i>Today's activities</h2>
+            <div class="card-content">
+              <div class="activity" v-for="activity in activities" :key="activity.id">
+                <div class="card-content1">
+                  <h3>{{ activity.description }}</h3>
+                  <div class="date-time"> <!-- Añadido este div -->
+                    <p>{{ activity.date }}</p>
+                    <p1>{{ activity.time }}</p1>
+                  </div>
+                </div>
               </div>
+
             </div>
+            <button class="see-more-button" @click="showMore">See More</button>
+
           </div>
 
+          <div class="card" v-if="deliveries.length">
+            <h2 class="card-title"><i class="fa fa-truck"></i>Deliveries on the move</h2>
+            <div class="card-content2">
+              <div class="delivery" v-for="delivery in deliveries" :key="delivery.id">
+                <h3>{{ delivery.destiny }}</h3>
+                <p>Responsible: {{ delivery.description }}</p>
+                <p>Start time: {{ delivery.date}}</p>
+                <p>Delivery time: {{ delivery.status}}</p>
+              </div>
+
+            </div>
+            <button class="see-more-button1" @click="showMore">See More</button>
+          </div>
         </div>
-        <button class="see-more-button" @click="showMore">See More</button>
+        <div class="card2" v-if="conditions.length">
+          <h2 class="card-title2"><i class="fa fa-signal"></i>Condition of drivers and vehicles</h2>
+          <div class="card-content3">
+            <div class="condition" v-for="condition in conditions" :key="condition.id">
+              <div class="date-time">
+                <p3>Model: {{ condition.model }}</p3>
 
-      </div>
+                <p4>Plate: {{ condition.licensePlate }}</p4>
 
-      <div class="card" v-if="deliveries.length">
-        <h2 class="card-title"><i class="fa fa-truck"></i>Deliveries on the move</h2>
-        <div class="card-content2">
-          <div class="delivery" v-for="delivery in deliveries" :key="delivery.id">
-            <h3>{{ delivery.title }}</h3>
-            <p>Responsible: {{ delivery.responsible }}</p>
-            <p>Start time: {{ delivery.star}}</p>
-            <p>Delivery time: {{ delivery.delivery}}</p>
+              </div>
+
+            </div>
+
           </div>
-
+          <button class="see-more-button2" @click="showMore">See More</button>
         </div>
-        <button class="see-more-button1" @click="showMore">See More</button>
       </div>
-    </div>
-    <div class="card2" v-if="conditions.length">
-      <h2 class="card-title2"><i class="fa fa-signal"></i>Condition of drivers and vehicles</h2>
-      <div class="card-content3">
-        <div class="condition" v-for="condition in conditions" :key="condition.id">
-          <div class="date-time">
-            <p3>Driver: {{ condition.driver }}</p3>
-
-            <p4>Status: {{ condition.status }}</p4>
-
-          </div>
-          <div class="date-time">
-            <p3>Vehicle: {{ condition.vehicle }}</p3>
-            <p5>Conditions: {{ condition.conditions }}</p5>
-
-
-          </div>
-
-        </div>
-
-      </div>
-      <button class="see-more-button2" @click="showMore">See More</button>
     </div>
   </div>
 </template>
 
-<style scoped>
+<style>
+
 @import 'font-awesome/css/font-awesome.min.css';
-.w-full {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  border-radius: 20px;
+
+.w-full{
+
+  margin-top: -30px;
+  margin-bottom: -200px;
 }
+
+
+.container{
+  max-width: 1500px;
+
+  color: #495057;
+}
+
+.flex-row{
+  justify-content: flex-end;
+}
+
+
 
 .title {
   color: white;
@@ -113,6 +122,7 @@ export default {
   color: lightgrey;
   margin-top: -10px;
   font-size: 25px;
+  margin-left: 400px;
 }
 
 .card-container {
@@ -176,20 +186,20 @@ export default {
 }
 .card-content1{
 
-  font-size: 14px;
+  font-size: 13px;
   color: white;
   background-color: #303841;
   border-radius: 20px;
   margin: 5px;
   padding: 5px;
-  width: 300px; /* Ajusta este valor a tu gusto */
-  height: 65px;
+  width: 400px; /* Ajusta este valor a tu gusto */
+  height: 35px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  margin-top: 25px;
+  margin-bottom: 16px;
+  margin-top: 19px;
 
 
 }
@@ -345,4 +355,3 @@ export default {
 
 }
 </style>
-

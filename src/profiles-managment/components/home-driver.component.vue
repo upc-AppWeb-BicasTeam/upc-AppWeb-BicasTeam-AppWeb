@@ -24,62 +24,76 @@ export default {
 </script>
 
 <template>
-  <div class="w-full align-content-center">
-    <div class="welcome-container">
-      <h1 class="title">Welcome, David Doe!</h1>
-      <img src="../../public/assets/logo.png" id="icon" alt="User Icon" class="custom-image">
-    </div>
-    <p class="subtitle">Let's start</p>
-    <div class="card-container">
-      <div class="card" v-if="activities.length">
-        <h2 class="card-title"><i class="fa fa-list"></i>Today's activities</h2>
-        <div class="card-content">
-          <div class="activity" v-for="activity in activities" :key="activity.id">
-            <div class="card-content1">
-              <h3>{{ activity.title }}</h3>
-              <div class="date-time"> <!-- Añadido este div -->
-                <p>{{ activity.date }}</p>
-                <p1>{{ activity.time }}</p1>
+  <div class="p-5 flex flex-row flex-auto container z-1">
+    <div>
+      <div class="w-full align-content-center">
+        <div class="welcome-container">
+          <h1 class="title">Welcome, David Doe!</h1>
+          <img src="../../public/assets/logo.png" id="icon" alt="User Icon" class="custom-image">
+        </div>
+        <p class="subtitle">Let's start</p>
+        <div class="card-container">
+          <div class="card" v-if="activities.length">
+            <h2 class="card-title"><i class="fa fa-list"></i>Today's activities</h2>
+            <div class="card-content">
+              <div class="activity" v-for="activity in activities" :key="activity.id">
+                <div class="card-content1">
+                  <h3>{{ activity.description }}</h3>
+                  <div class="date-time"> <!-- Añadido este div -->
+                    <p>{{ activity.date }}</p>
+                    <p1>{{ activity.time }}</p1>
+                  </div>
+
+                </div>
               </div>
+
             </div>
+            <button class="see-more-button" @click="showMore">See More</button>
+
           </div>
 
-        </div>
-        <button class="see-more-button" @click="showMore">See More</button>
-
-      </div>
-
-      <div class="card" v-if="deliveries.length">
-        <h2 class="card-title"><i class="fa fa-truck"></i>Deliveries on the move</h2>
-        <div class="card-content">
-          <div class="delivery" v-for="delivery in deliveries" :key="delivery.id">
-            <div class="card-content2">
-              <div class="delivery">
-                <p>address: {{ delivery.address }}</p>
-                <p>package: {{ delivery.package}}</p>
-                <p>shipping: {{ delivery.shipping}}</p>
+          <div class="card" v-if="deliveries.length">
+            <h2 class="card-title"><i class="fa fa-truck"></i>Deliveries on the move</h2>
+            <div class="card-content">
+              <div class="delivery" v-for="delivery in deliveries" :key="delivery.id">
+                <div class="card-content2">
+                  <div class="delivery">
+                    <p>Address: {{ delivery.description }}</p>
+                    <p>Package: {{ delivery.package}}</p>
+                    <p>shipping Sart: {{ delivery.shipping}}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
+            </div>
+            <button class="see-more-button1" @click="showMore">See More</button>
+          </div>
         </div>
-        <button class="see-more-button1" @click="showMore">See More</button>
       </div>
+
     </div>
   </div>
 </template>
 
 <style scoped>
 @import 'font-awesome/css/font-awesome.min.css';
-.w-full {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  border-radius: 20px;
+.w-full{
+
+  margin-top: -30px;
+  margin-bottom: -200px;
 }
+
+
+.container{
+  max-width: 1500px;
+
+  color: #495057;
+}
+
+.flex-row{
+  justify-content: flex-end;
+}
+
 
 .title {
   color: white;

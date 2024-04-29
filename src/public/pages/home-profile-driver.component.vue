@@ -1,17 +1,32 @@
 <script>
 
-import HomeDriverMenu from "../../profiles-managment/components/home-driver-menu.component.vue";
+
+
+
+import sidebarDriverComponent from "../../profiles-managment/components/sidebar-driver.component.vue";
+import homeDriverComponent from "../../profiles-managment/components/home-driver.component.vue";
 
 export default {
-  name: "login",
-  components: {HomeDriverMenu},
+  name: "Businessman-Profile",
+  components: {
+
+    homeDriverComponent,
+    sidebarDriverComponent
+
+
+  },
 }
 </script>
 
 <template>
-  <home-driver-menu/>
+  <div class="container">
+    <sidebar-driver-component/>
+    <home-driver-component/>
+  </div>
 </template>
 
-<style scoped>
-
+<style>
+.container{
+  display: flex;
+}
 </style>

@@ -1,17 +1,31 @@
+
+
+
+
 <script>
 
-import HomeBusinessmanMenu from "../../profiles-managment/components/home-businessman-menu.component.vue";
+import HomeBusinessman from "../../profiles-managment/components/home-businessman.component.vue";
+import sidebarBusinessmanComponent from "../../profiles-managment/components/sidebar-businessman.component.vue";
 
 export default {
-  name: "login",
-  components: {HomeBusinessmanMenu},
+  name: "Businessman-Profile",
+  components: {
+    HomeBusinessman,
+    sidebarBusinessmanComponent
+
+  },
 }
 </script>
 
 <template>
-  <home-businessman-menu/>
+  <div class="container">
+    <sidebar-businessman-component/>
+    <home-businessman/>
+  </div>
 </template>
 
-<style scoped>
-
+<style>
+.container{
+  display: flex;
+}
 </style>
