@@ -12,6 +12,7 @@ import router from "./router/index.js";
 import Card from "primevue/card";
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
+import Button from "primevue/button";
 
 const app = createApp(App);
 app.use(PrimeVue,{ripple:true})
@@ -19,5 +20,6 @@ app.use(PrimeVue,{ripple:true})
     .component('pv-card', Card)
     .component('pv-table', DataTable)
     .component('pv-column', Column)
+    .component('pv-button', Button)
 
 app.mount('#app')
