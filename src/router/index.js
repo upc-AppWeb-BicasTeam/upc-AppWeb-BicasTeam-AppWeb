@@ -21,9 +21,6 @@ const router  = createRouter({
         { path: '/home-businessman-menu',    component: homeBusinessmanMenuComponent},
         { path: '/home-driver-menu',    component:  homeDriverMenuComponent},
         {path:'/',   redirect:'/login'},
-        {path:'/',   redirect:'/home-businessman'},
-        {path:'/',   redirect:'/home-driver'},
-
 
     ]
 });

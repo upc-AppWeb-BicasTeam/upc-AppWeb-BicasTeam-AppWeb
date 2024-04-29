@@ -12,7 +12,7 @@ export default {
       drawer: false,
       showSidebar: true,
       items: [
-        { label: 'Home', to: '/home-businessman', icon: 'fa-home' },
+        { label: 'Home', to: '/home-businessman-menu', icon: 'fa-home' },
         { label: 'Organization', to: '/organization', icon: 'fa-users' },
         { label: 'Reports', to: '/reports', icon: 'fa-bar-chart' },
       ],
