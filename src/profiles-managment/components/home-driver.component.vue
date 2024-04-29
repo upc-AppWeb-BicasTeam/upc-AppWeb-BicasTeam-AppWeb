@@ -2,7 +2,7 @@
 import { HomeApiService } from "../services/home-api.service.js";
 
 export default {
-  name: "home",
+  name: "home-driver",
   title: "Home",
   data() {
     return {
@@ -85,6 +85,8 @@ export default {
   color: white;
   font-size: 45px;
   margin-top: -10px;
+  white-space: nowrap;
+
 }
 
 .subtitle {

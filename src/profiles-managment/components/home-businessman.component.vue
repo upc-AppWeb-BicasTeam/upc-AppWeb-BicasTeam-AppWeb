@@ -2,7 +2,7 @@
 import { HomeApiService } from "../services/home-api.service.js";
 
 export default {
-  name: "home",
+  name: "home-businessman",
   title: "Home",
   data() {
     return {

@@ -1,13 +1,18 @@
 
 <script>
+import Home from "./home-driver.component.vue";
+import HomeBusinessman from "./home-businessman.component.vue";
+
 export default {
-  name: 'app',
+  name: 'home-businessman-menu',
+  components: {HomeBusinessman, Home},
   title: 'Welcome',
   data() {
     return {
       drawer: false,
+      showSidebar: true,
       items: [
-        { label: 'Home', to: '/home', icon: 'fa-home' },
+        { label: 'Home', to: '/home-businessman', icon: 'fa-home' },
         { label: 'Organization', to: '/organization', icon: 'fa-users' },
         { label: 'Reports', to: '/reports', icon: 'fa-bar-chart' },
       ],
@@ -18,23 +23,26 @@ export default {
   },
   created() {
     document.body.style.backgroundColor = '#5D6D7E';
+
   },
   methods: {
     toggleDrawer() {
       this.drawer = !this.drawer;
     }
-  }
+  },
+
 }
+
 </script>
 
 <template>
   <div class="app">
     <div class="sidebar">
       <div class="profile">
-        <img src="./assets/conductor.png" id="icon" alt="User Icon" class="custom-image">
-        <h1 class="name">David Doe</h1>
+        <img src="../../public/assets/empresario.png" id="icon" alt="User Icon" class="custom-image">
+        <h1 class="name">Jhon Doe</h1>
       </div>
-      <p class="count">Driver</p>
+      <p class="count">Businessman</p>
       <nav>
         <router-link v-for="item in items" :key="item.label" v-slot="{navigate, href}" :to="item.to" custom>
           <pv-button :href="href" class="p-button-text text-white" @click="navigate">
@@ -53,6 +61,7 @@ export default {
     <main>
       <router-view/>
     </main>
+    <home-businessman/>
   </div>
 </template>
 
@@ -132,13 +141,12 @@ main {
 }
 
 .custom-image {
-  width: 80px; /* Ajusta el ancho según tus preferencias */
-  height: 75px; /* Mantener la proporción original */
+  width: 75px; /* Ajusta el ancho según tus preferencias */
+  height: auto; /* Mantener la proporción original */
   margin-left: 200px; /* Ajusta la posición horizontal */
   border-radius: 50%;
   margin-right: 15px
 }
-
 
 .profile {
   display: flex;
@@ -154,6 +162,3 @@ main {
 }
 
 </style>
-
-
-
