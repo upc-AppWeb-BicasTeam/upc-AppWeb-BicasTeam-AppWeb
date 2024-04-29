@@ -112,7 +112,7 @@ export default {
 
 .count {
   color: white;
-  margin-top: -10px;
+  margin-top: -200px;
   font-size: 12px;
   margin-left: 70px;
 
