@@ -1,6 +1,6 @@
 <script>
 import Sidebar from "../components/sidebar.component.vue";
-import DataView from "../components/data-view.component.vue";
+import DataView from "../../profile/components/data-view.component.vue";
 export default {
   name: "userProfile",
   components: {

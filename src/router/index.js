@@ -1,5 +1,4 @@
 import {createRouter, createWebHistory} from "vue-router";
-import sidebarComponent from "../public/components/sidebar.component.vue";
 import userProfileComponent from "../public/pages/userProfile.component.vue";
 const router  = createRouter({
     history: createWebHistory(),
