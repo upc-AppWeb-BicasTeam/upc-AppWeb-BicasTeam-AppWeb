@@ -6,7 +6,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 * @type {axios. AxiosInstance}
 * */
 const http = axios.create({
-    baseURL : API_BASE_URL,
+    baseURL : "https://my-json-server.typicode.com/upc-AppWeb-BicasTeam/moviGestion-iam",
     headers:{'Content-type':'application/json'}
 });
 

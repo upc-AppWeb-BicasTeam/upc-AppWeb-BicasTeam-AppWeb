@@ -1,12 +1,19 @@
 <script>
-
+import { ProfileApiService } from "../../profile/services/profile-api.service.js";
 
 export default {
   name: "sidebar",
   data() {
     return {
+      user: null,
       visible: true,
     };
+  },
+  created() {
+    const apiService = new ProfileApiService();
+    apiService.getUsers().then(response => {
+      this.user = response.data[0];
+    });
   },
 }
 </script>
@@ -17,9 +24,9 @@ export default {
       <div class="flex flex-column align-items-left h-full justify-content-around z-1">
         <div class="flex justify-content-center align-items-center mr-6">
           <pv-avatar image="https://www.gravatar.com/avatar/05dfd4b41340d09cae045235eb0893c3?d=mp" class="mr-2 flex align-items-center justify-content-center" size="xlarge" shape="circle"></pv-avatar>
-          <div class="m-2">
-            <h2>John Doe</h2>
-            <h3>Driver</h3>
+          <div v-if="user" class="m-2">
+            <h2>{{ user.name }}</h2>
+            <h3>{{ user.type }}</h3>
           </div>
         </div>
         <div>

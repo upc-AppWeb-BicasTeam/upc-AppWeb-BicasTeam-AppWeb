@@ -1,6 +1,19 @@
 <script>
 export default {
   name: "data-view",
+  data(){
+    return {
+      users: null,
+    };
+  },
+  methods: {
+    updateUser(){
+      const apiService = new ProfileApiService();
+      apiService.updateUser(this.user.id, this.user).then(response => {
+        this.users = response.data;
+      });
+    }
+  }
 }
 </script>
 
@@ -39,7 +52,7 @@ export default {
             </div>
             <div class="surface-100 mb-3 col-12" style="height: 2px"></div>
             <div class="col-12">
-              <pv-button pbutton pripple label="Save Changes" class="p-element p-ripple w-auto mt-3 p-button p-component"></pv-button>
+              <pv-button pbutton pripple label="Save Changes" class="p-element p-ripple w-auto mt-3 p-button p-component" @click="updateUser"></pv-button>
             </div>
           </div>
         </div>
