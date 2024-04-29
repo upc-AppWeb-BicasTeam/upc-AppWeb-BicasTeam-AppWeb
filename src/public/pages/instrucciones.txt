@@ -1,5 +1,0 @@
-En esta carpeta iran los componentes que daran vista a las rutas:
-
-Por ejemplo el learning center se utiliza:
-home.component
-about.component

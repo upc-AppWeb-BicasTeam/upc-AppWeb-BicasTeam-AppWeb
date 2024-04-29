@@ -1,9 +1,10 @@
 <script>
-import {VehiclesApiService} from "../../shared/services/vehicles-api.service.js";
+import {VehiclesApiService} from "../services/vehicules-api.service.js";
+
 
 export default {
-  name: "display-vehicles",
-  title: "Display Vehicles",
+  name: "cya-vehicles-carrier",
+  title: "cya-vehicles-carrier",
   data() {
     return {
       vehiclesApi: new VehiclesApiService(),
@@ -49,11 +50,11 @@ export default {
 </template>
 
 <style lang="css" scoped>
-  .container {
-    border: 1px solid;
-    width: 350px;
-    text-align: center;
-    background: darkgray;
-    float: left;
-  }
+.container {
+  border: 1px solid;
+  width: 350px;
+  text-align: center;
+  background: darkgray;
+  float: left;
+}
 </style>
