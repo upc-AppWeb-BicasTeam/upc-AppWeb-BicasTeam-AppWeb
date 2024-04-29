@@ -4,6 +4,12 @@
       "id": "1",
       "email": "admin",
       "password": "admin",
+      "type": "businessman"
+    },
+    {
+      "id": "2",
+      "email": "juan",
+      "password": "juan",
       "type": "carrier"
     }
   ],
