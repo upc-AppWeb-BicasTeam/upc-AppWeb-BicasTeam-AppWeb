@@ -14,6 +14,7 @@ export default {
       passwordConfirmation:"",
       error: false,
       error_msg: "",
+      vehicules:[],
       iamApi:new IamApiService()
     }
   },
@@ -35,7 +36,8 @@ export default {
           lastName: this.lastName,
           email: this.email,
           password: this.password,
-          type: this.type
+          type: this.type,
+          vehicules:this.vehicules
         };
 
         // Create user
