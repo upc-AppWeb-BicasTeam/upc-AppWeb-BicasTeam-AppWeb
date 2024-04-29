@@ -35,7 +35,7 @@ export default {
       this.submitted = false;
     },
     saveReport(){
-      
+      this.reportDialog= false;
     }
   }
 }
@@ -68,19 +68,36 @@ export default {
     <pv-dialog v-model:visible="reportDialog" :style="{width: '450px'}" header="Report Details" :modal="true" class="p-fluid">
       <div class="field">
         <label for="name" class="mr-5">Name</label>
-        <input id="name" v-model.trim="report.name" required="true" autofocus :invalid="submitted && !report.name" />
+        <input id="name" v-model.trim="report.name" required="true" autofocus :invalid="submitted && !report.name" class="p-inputtext"/>
         <small class="p-error" v-if="submitted && !report.name">Name is required.</small>
       </div>
       <div class="field">
         <label for="description">Description</label>
-        <textarea id="description" v-model="report.description" required="true" rows="3" cols="20" />
+        <textarea id="description" v-model="report.description" required="true" rows="3" cols="20" class="p-inputtext" />
       </div>
 
       <template #footer>
-        <pv-button label="Cancel" icon="pi pi-times" text @click="hideDialog"/>
-        <pv-button label="Save" icon="pi pi-check" text @click="saveReport" />
+        <pv-button label="Cancel" icon="pi pi-times" text @click="hideDialog" class="p-button-footer"/>
+        <pv-button label="Save" icon="pi pi-check" text @click="saveReport" class="p-button-footer"/>
       </template>
     </pv-dialog>
     <!--REPORT-DIALOG END-->
   </div>
 </template>
+
+<style>
+.field label {
+  font-weight: bold;
+  color: #333;
+}
+.p-inputtext {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+}
+.p-button-footer {
+  background-color: #ddd;
+  color: #333;
+  border: none;
+}
+</style>
