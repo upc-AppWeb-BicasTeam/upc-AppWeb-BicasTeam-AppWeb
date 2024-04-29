@@ -2,8 +2,10 @@
 import {VehiclesApiService} from "../services/vehicules-api.service.js";
 
 
+
 export default {
   name: "cya-vehicles-carrier",
+  
   title: "cya-vehicles-carrier",
   data() {
     return {
@@ -34,6 +36,8 @@ export default {
       <h3>You can see your car fleet</h3>
     </div>
   </div>
+
+
   <div class="container" v-for="vehicle of vehicles" v-bind:key="vehicle.id">
     <pv-card>
       <template #title>{{vehicle.model}}</template>
