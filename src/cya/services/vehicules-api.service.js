@@ -11,13 +11,12 @@ export class VehiclesApiService{
         return http.get('/moviGestion-iam/users');
     }
 
-
     addVehicle(vehicle){
-        return http.post("/moviGestion-cya/vehicles",vehicle);
+        return http.post("/moviGestion-cya/vehicle",vehicle);
     }
 
     deleteVehicle(id){
-        return http.delete(`/moviGestion-cya/vehicles/${id}`);
+        return http.delete(`/moviGestion-cya/vehicle/${id}`);
     }
 
     assignVehicleToCarrier(vehicleId,carrierId){
