@@ -71,34 +71,27 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 
 @import 'font-awesome/css/font-awesome.min.css';
-.w-full{
 
-  margin-top: -30px;
-  margin-bottom: -35px;
+.welcome-container {
+  display: flex;
+  align-items: center;
 
+}
+
+
+.title{
+
+
+  margin-right: 180px;
 }
 
 .container{
 
-
   color: #495057;
 }
-
-.flex-row{
-  justify-content: flex-end;
-}
-
-
-
-.title {
-  color: white;
-  font-size: 45px;
-  margin-top: -10px;
-}
-
 
 
 .card-container {
@@ -199,12 +192,6 @@ h3 {
   gap: 1px; /* Ajusta este valor a tu gusto para modificar la separación */
 }
 
-.date-time2{
-
-  display: flex;
-  gap: 100px;
-  justify-content: center;
-}
 
 .date-time p1 {
 
@@ -252,12 +239,7 @@ h3 {
 }
 
 
-.welcome-container {
-  display: flex;
-  align-items: center; /* Centrar verticalmente */
-  justify-content: flex-end; /* Alinear al lado derecho */
 
-}
 
 .fa {
   padding-right:15px

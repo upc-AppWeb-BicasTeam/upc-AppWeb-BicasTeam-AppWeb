@@ -45,6 +45,13 @@ export default {
       }else{
         this.$router.push(`/${this.id}/report/carrier`)
       }
+    },
+    goToShipments(){
+      if(this.type === "businessman"){
+        this.$router.push(`/${this.id}/organization`)
+      }else{
+        this.$router.push(`/${this.id}/organization/view`)
+      }
     }
   }
 }
@@ -69,7 +76,7 @@ export default {
                 <span class="font-medium text-xl">Home</span>
               </a>
             </li>
-            <li>
+            <li @click="goToShipments">
               <a v-ripple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
                 <i class="pi pi-users mr-2 text-xl"></i>
                 <span class="font-medium text-xl">Organization</span>

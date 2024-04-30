@@ -27,8 +27,8 @@ const router  = createRouter({
         {path:'/:id/vehicles-businessman', component: DisplayVehiclesBusinessmanComponent },
         { path: '/:id/report/businessman', component: BusinessmanReportComponent},
         { path: '/:id/report/carrier', component: CarrierReportComponent},
-        { path: '/organization', component: OrganizationShipmentComponent},
-        { path: '/organization/view', component: ViewShipmentsComponent},
+        { path: '/:id/organization', component: OrganizationShipmentComponent},
+        { path: '/:id/organization/view', component: ViewShipmentsComponent},
         {path:'/',   redirect:'/login'},
 
     ]
