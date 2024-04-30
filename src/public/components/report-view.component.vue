@@ -4,23 +4,27 @@ import {ReportsApiService} from "../../report-view/services/reports-api.service.
 export default {
   name: "report-view",
   title: "Report View",
-  data(){
+  data() {
     return {
       reports: [],
       reportsApi: new ReportsApiService(),
     };
   },
-  created(){
-    this.getDataDriver();
+  created() {
+    this.getDataReport();
   },
   methods: {
-    getDataDriver(){
-      this.reportsApi.getAllReports()
-          .then(response => {
-            this.reports = response.data;
-            console.log(response.data);
-            console.log(this.reports);
-          })
+    async getDataReport() {
+      const response = await this.reportsApi.getAllReports();
+      const reports = response.data;
+      for (let report of reports) {
+        const userResponse = await this.reportsApi.findUserByID(report['id-user']);
+        console.log(userResponse);
+        const user = userResponse.data[0];
+        report.name = `${user.name} ${user.lastName}`;
+      }
+      this.reports = reports;
+      console.log(this.reports);
     }
   }
 }
