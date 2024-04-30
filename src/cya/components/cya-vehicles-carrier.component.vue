@@ -1,8 +1,6 @@
 <script>
 import {VehiclesApiService} from "../services/vehicules-api.service.js";
 
-
-
 export default {
   name: "cya-vehicles-carrier",
   
@@ -59,6 +57,6 @@ export default {
   width: 350px;
   text-align: center;
   background: darkgray;
-  float: left;
+  z-index: 1;
 }
 </style>
