@@ -1,22 +1,18 @@
 <script>
 import {defineComponent} from "vue";
 import CyaVehiclesCarrier from "../../cya/components/cya-vehicles-carrier.component.vue";
-import SidebarPublic from "../components/sidebar.component.vue";
+
 
 export default defineComponent({
-  components: {SidebarPublic, CyaVehiclesCarrier}
+  components: { CyaVehiclesCarrier}
 })
 </script>
 
 <template>
-  <div class="container">
-    <sidebar-public/>
-    <cya-vehicles-carrier/>
-  </div>
+  <cya-vehicles-carrier/>
+
 </template>
 
 <style scoped>
-.container{
-  display: flex;
-}
+
 </style>
