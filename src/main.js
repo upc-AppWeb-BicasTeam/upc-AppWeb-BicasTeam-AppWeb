@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import './style.css'
-import App from './app.vue'
+import App from './App.vue'
 
 import 'primevue/resources/themes/md-light-indigo/theme.css'
 import 'primevue/resources/primevue.min.css'
