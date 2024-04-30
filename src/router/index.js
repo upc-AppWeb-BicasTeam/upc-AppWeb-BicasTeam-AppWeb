@@ -8,6 +8,7 @@ import homeProfileBusinessmanComponent from "../public/pages/home-profile-busine
 import homeProfileDriverComponent from "../public/pages/home-profile-driver.component.vue";
 import userProfileComponent from "../public/pages/userProfile.component.vue";
 import carrierReportComponent from "../public/pages/carrier-report.component.vue";
+import ReportDriverComponent from "../public/pages/report-driver.component.vue";
 import DisplayVehiclesBusinessmanComponent from "../public/pages/display-vehicles-businessman.component.vue";
 
 const router  = createRouter({
@@ -23,6 +24,7 @@ const router  = createRouter({
         {path:'/:id/vehicles-carrier', component: DisplayVehiclesCarrierComponent },
         {path:'/:id/vehicles-businessman', component: DisplayVehiclesBusinessmanComponent },
         { path: '/:id/report/view', component: carrierReportComponent},
+        { path: '/report/driver', component: ReportDriverComponent},
         {path:'/',   redirect:'/login'},
 
     ]

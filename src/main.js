@@ -9,8 +9,11 @@ import 'primeicons/primeicons.css'
 import 'primeflex/primeflex.css'
 
 import PrimeVue from "primevue/config";
+import Dialog from "primevue/dialog";
+import Toolbar from "primevue/toolbar";
 import router from "./router/index.js";
 import ToastService from "primevue/toastservice";
+import DataTable from "primevue/datatable";
 import Sidebar from "primevue/sidebar";
 import Card from "primevue/card";
 import ConfirmDialog from "primevue/confirmdialog";
@@ -30,11 +33,14 @@ app.use(PrimeVue,{ripple:true})
     .use(ToastService)
     .use(router)
     .component('pv-sidebar', Sidebar)
+    .component('pv-dialog', Dialog)
+    .component('pv-toolbar', Toolbar)
     .component('pv-card', Card)
     .component('pv-table', DataTable)
     .component('pv-toolbar', Toolbar)
     .component('pv-avatar', Avatar)
     .component('pv-confirm-dialog', ConfirmDialog)
+    .component('pv-table', DataTable)
     .component('pv-data-view', DataView)
     .component('pv-column', Column)
     .component('pv-button', Button)

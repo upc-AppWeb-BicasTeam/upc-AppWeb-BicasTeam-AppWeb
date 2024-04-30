@@ -4,7 +4,7 @@ export class ReportsApiService{
     findUserByID(id){
         return http.get(`/moviGestion-iam/users?id=${id}`)
     }
-    getAllReports(){
+    getAllReports() {
         return http.get('/moviGestion-cya/reports')
     }
 }
