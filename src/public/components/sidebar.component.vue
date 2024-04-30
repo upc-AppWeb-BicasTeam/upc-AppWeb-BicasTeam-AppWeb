@@ -22,6 +22,13 @@ export default {
     })
   },
   methods:{
+    goToHome(){
+      if(this.type === "businessman"){
+        this.$router.push(`/${this.id}/home-businessman-menu`)
+      }else{
+        this.$router.push(`/${this.id}/home-driver-menu`)
+      }
+    },
     goToProfile(){
       this.$router.push(`/${this.id}/userprofile`)
     },
@@ -31,7 +38,14 @@ export default {
       }else{
         this.$router.push(`/${this.id}/vehicles-carrier`)
       }
-
+    },
+    goToReports(){
+      if(this.type === "businessman"){
+        this.$router.push(`/${this.id}/report/view`)
+      }else{
+        console.log("falta que se vea reportes asigndo al carrier")
+        //this.$router.push(`/${this.id}/vehicles-carrier`)
+      }
     }
   }
 }
@@ -50,7 +64,7 @@ export default {
         </div>
         <div>
           <ul class="list-none p-3 m-0">
-            <li>
+            <li @click="goToHome">
               <a v-ripple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
                 <i class="pi pi-home mr-2 text-xl"></i>
                 <span class="font-medium text-xl">Home</span>
@@ -62,7 +76,7 @@ export default {
                 <span class="font-medium text-xl">Organization</span>
               </a>
             </li>
-            <li>
+            <li @click="goToReports">
               <a v-ripple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
                 <i class="pi pi-chart-bar mr-2 text-xl"></i>
                 <span class="font-medium text-xl">Reports</span>
@@ -116,7 +130,7 @@ body{
 .mr-6
 {
   margin-right: 2px;
-  margin-left: -200px;
+
 
 
 }

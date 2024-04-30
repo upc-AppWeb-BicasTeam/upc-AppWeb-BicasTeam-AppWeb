@@ -22,7 +22,7 @@ const router  = createRouter({
         {path:'/:id/userprofile', component: userProfileComponent},
         {path:'/:id/vehicles-carrier', component: DisplayVehiclesCarrierComponent },
         {path:'/:id/vehicles-businessman', component: DisplayVehiclesBusinessmanComponent },
-        { path: '/report/view', component: carrierReportComponent},
+        { path: '/:id/report/view', component: carrierReportComponent},
         {path:'/',   redirect:'/login'},
 
     ]
