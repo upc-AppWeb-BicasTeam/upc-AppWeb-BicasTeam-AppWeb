@@ -10,6 +10,8 @@ import userProfileComponent from "../public/pages/userProfile.component.vue";
 import DisplayVehiclesBusinessmanComponent from "../public/pages/display-vehicles-businessman.component.vue";
 import BusinessmanReportComponent from "../public/pages/businessman-report.component.vue";
 import CarrierReportComponent from "../public/pages/carrier-report.component.vue";
+import OrganizationShipmentComponent from "../public/pages/organization-shipment.component.vue";
+import ViewShipmentsComponent from "../public/pages/view-shipments.component.vue";
 
 const router  = createRouter({
     history: createWebHistory(),
@@ -25,6 +27,8 @@ const router  = createRouter({
         {path:'/:id/vehicles-businessman', component: DisplayVehiclesBusinessmanComponent },
         { path: '/:id/report/businessman', component: BusinessmanReportComponent},
         { path: '/:id/report/carrier', component: CarrierReportComponent},
+        { path: '/organization', component: OrganizationShipmentComponent},
+        { path: '/organization/view', component: ViewShipmentsComponent},
         {path:'/',   redirect:'/login'},
 
     ]

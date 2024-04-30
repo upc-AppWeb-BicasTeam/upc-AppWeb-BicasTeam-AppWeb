@@ -23,6 +23,7 @@ import Column from "primevue/column";
 import Button from "primevue/button";
 import Row from "primevue/row";
 import FileUpload from "primevue/fileupload";
+import Calendar from "primevue/calendar";
 import Message from "primevue/message";
 
 const app = createApp(App);
@@ -45,4 +46,5 @@ app.use(PrimeVue,{ripple:true})
     .component('pv-row', Row)
     .component('pv-file-upload', FileUpload)
     .component('pv-message', Message)
+    .component('pv-calendar', Calendar)
 app.mount('#app')
