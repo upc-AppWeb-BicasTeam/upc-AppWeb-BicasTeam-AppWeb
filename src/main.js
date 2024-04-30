@@ -10,10 +10,8 @@ import 'primeflex/primeflex.css'
 
 import PrimeVue from "primevue/config";
 import Dialog from "primevue/dialog";
-import Toolbar from "primevue/toolbar";
 import router from "./router/index.js";
 import ToastService from "primevue/toastservice";
-import DataTable from "primevue/datatable";
 import Sidebar from "primevue/sidebar";
 import Card from "primevue/card";
 import ConfirmDialog from "primevue/confirmdialog";

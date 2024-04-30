@@ -1,27 +1,21 @@
 <script>
-import Sidebar from "../components/sidebar.component.vue";
-import ReportViewComponent from "../components/report-view.component.vue";
 import ReportView from "../components/report-view.component.vue";
+import ReportDriver from "../components/report-driver.component.vue";
+import Sidebar from "../components/sidebar.component.vue";
 
 export default {
   name: "carrier-report",
-  components: {
-    ReportView,
-    Sidebar,
-    ReportViewComponent
-  },
+  components: {ReportDriver, ReportView,Sidebar}
 }
 </script>
 
 <template>
   <div class="container">
     <sidebar></sidebar>
-    <report-view></report-view>
+    <report-driver></report-driver>
   </div>
 </template>
 
-<style>
-.container{
-  display: flex;
-}
+<style scoped>
+
 </style>

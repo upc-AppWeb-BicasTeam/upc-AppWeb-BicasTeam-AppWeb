@@ -41,10 +41,9 @@ export default {
     },
     goToReports(){
       if(this.type === "businessman"){
-        this.$router.push(`/${this.id}/report/view`)
+        this.$router.push(`/${this.id}/report/businessman`)
       }else{
-        console.log("falta que se vea reportes asigndo al carrier")
-        //this.$router.push(`/${this.id}/vehicles-carrier`)
+        this.$router.push(`/${this.id}/report/carrier`)
       }
     }
   }
