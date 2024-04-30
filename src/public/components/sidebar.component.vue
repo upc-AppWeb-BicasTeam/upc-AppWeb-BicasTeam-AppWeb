@@ -1,5 +1,5 @@
 <script>
-import { ProfileApiService } from "../../profile/services/profile-api.service.js";
+import { ProfileApiService } from "../../profiles-managment/services/profile-api.service.js";
 
 export default {
   name: "sidebar",

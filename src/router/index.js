@@ -7,6 +7,7 @@ import homeBusinessmanComponent from "../profiles-managment/components/home-busi
 import homeDriverComponent from "../profiles-managment/components/home-driver.component.vue";
 import homeProfileBusinessmanComponent from "../public/pages/home-profile-businessman.component.vue";
 import homeProfileDriverComponent from "../public/pages/home-profile-driver.component.vue";
+import userProfileComponent from "../public/pages/userProfile.component.vue";
 
 const router  = createRouter({
     history: createWebHistory(),

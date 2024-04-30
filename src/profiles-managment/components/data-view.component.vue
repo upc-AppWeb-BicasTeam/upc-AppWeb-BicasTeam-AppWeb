@@ -1,4 +1,6 @@
 <script>
+import {ProfileApiService} from "../services/profile-api.service.js";
+
 export default {
   name: "data-view",
   data(){
