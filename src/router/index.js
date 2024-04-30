@@ -15,10 +15,10 @@ const router  = createRouter({
         {path:'/register', component:registerComponent},
         {path:'/register/:type', component: registerInformationComponent},
         {path:'/register/successfully', component:registerInformationSuccessfullyComponent},
-        { path: '/:id/home-businessman-menu',    component: homeProfileBusinessmanComponent},
-        { path: '/:id/home-driver-menu',    component:  homeProfileDriverComponent},
-        { path: '/:id/userprofile', component: userProfileComponent},
-        { path: '/:id/vehicles-carrier', component: DisplayVehiclesCarrierComponent },
+        {path: '/:id/home-businessman-menu',    component: homeProfileBusinessmanComponent},
+        {path: '/:id/home-driver-menu',    component:  homeProfileDriverComponent},
+        {path: '/:id/userprofile', component: userProfileComponent},
+        {path: '/:id/vehicles-carrier', component: DisplayVehiclesCarrierComponent },
         {path:'/',   redirect:'/login'},
 
     ]

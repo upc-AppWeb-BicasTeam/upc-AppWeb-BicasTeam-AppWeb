@@ -38,11 +38,10 @@ export default {
 </script>
 
 <template>
-  <div class="card flex justify-content-center justify-content-between flex-column-">
     <pv-sidebar visible="visible" :showCloseIcon="false" :showHeader="false">
       <div class="flex flex-column align-items-left h-full justify-content-around z-">
         <div @click="goToProfile" class="flex justify-content-center align-items-center mr-6 flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
-          <img src="https://www.capitalcoahuila.com.mx/wp-content/uploads/2022/11/CARL-e1669117013260.jpeg" id="icon" alt="User Icon" class="custom-image"size="xlarge" shape="circle">
+          <img src="https://www.capitalcoahuila.com.mx/wp-content/uploads/2022/11/CARL-e1669117013260.jpeg" id="icon" alt="User Icon" class="custom-image"size=" xlarge" shape="circle">
           <a  class="m-2">
             <h2>{{name}}</h2>
             <h2>{{lastName}}</h2>
@@ -72,7 +71,7 @@ export default {
             <li @click="goToVehicles">
               <a v-ripple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
                 <i class="pi pi-truck mr-2 text-xl"></i>
-                <span class="font-medium text-xl">Vechicles</span>
+                <span class="font-medium text-xl">Vehicles</span>
               </a>
             </li>
           </ul>
@@ -89,7 +88,6 @@ export default {
         </div>
       </div>
     </pv-sidebar>
-  </div>
 </template>
 
 <style>
@@ -101,6 +99,7 @@ export default {
   background-color: #303841;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
+
 }
 
 .p-sidebar-mask{
@@ -108,6 +107,11 @@ export default {
 }
 body{
   background-color: #5D6D7E;
+}
+
+.custom-image {
+  border-radius: 50%;
+  margin-left: 0 !important;
 }
 
 </style>
