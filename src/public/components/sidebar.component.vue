@@ -61,6 +61,12 @@ export default {
                 <span class="font-medium text-xl">Reports</span>
               </a>
             </li>
+            <li>
+              <a v-ripple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+                <i class="pi pi-truck mr-2 text-xl"></i>
+                <span class="font-medium text-xl">Vechicles</span>
+              </a>
+            </li>
           </ul>
         </div>
         <div>
