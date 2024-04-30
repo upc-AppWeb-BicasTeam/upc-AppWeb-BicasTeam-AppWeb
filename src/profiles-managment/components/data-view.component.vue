@@ -30,7 +30,7 @@ export default {
           <div class="grid formgrid p-fluid">
             <div class="field mb-4 col-12">
               <label for="nickname" class="font-medium">Nickname</label>
-              <input id="nickname" type="text" pinputtext class="p-inputtext p-component p-element" />
+              <input id="nickname" type="text"  class="p-inputtext p-component p-element" />
             </div>
             <div class="surface-100 mb-3 col-12" style="height: 2px"></div>
             <div class="field mb-4 col-12 md:col-6">
@@ -50,7 +50,7 @@ export default {
             <div class="surface-100 mb-3 col-12" style="height: 2px"></div>
             <div class="field mb-4 col-12 md:col-6">
               <label for="email" class="font-medium">Email</label>
-              <input id="email" type="text" pinputtext class="p-inputtext p-component p-element">
+              <input id="email" type="text" class="p-inputtext p-component p-element">
             </div>
             <div class="surface-100 mb-3 col-12" style="height: 2px"></div>
             <div class="col-12">

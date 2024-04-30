@@ -1,8 +1,4 @@
 <script>
-
-
-
-
 import sidebarDriverComponent from "../../profiles-managment/components/sidebar-driver.component.vue";
 import homeDriverComponent from "../../profiles-managment/components/home-driver.component.vue";
 
