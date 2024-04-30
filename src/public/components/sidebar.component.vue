@@ -108,6 +108,18 @@ export default {
 body{
   background-color: #5D6D7E;
 }
+.custom-image {
+  border-radius: 50%;
+}
+
+
+.mr-6
+{
+  margin-right: 2px;
+  margin-left: -200px;
+
+
+}
 
 .custom-image {
   border-radius: 50%;

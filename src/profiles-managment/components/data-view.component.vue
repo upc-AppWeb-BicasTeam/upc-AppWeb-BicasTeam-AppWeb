@@ -98,4 +98,6 @@ export default {
 .flex-row{
   justify-content: flex-end;
 }
+
+
 </style>

@@ -40,13 +40,11 @@ export default {
                 <div class="card-content1">
                   <h3>{{ activity.description }}</h3>
                   <div class="date-time"> <!-- Añadido este div -->
-                    <p>{{ activity.date }}</p>
-                    <p1>{{ activity.time }}</p1>
+                    <p>{{ activity.type }}</p>
+                    <p1>{{ activity.dateTime.date }} - {{ activity.dateTime.time }}</p1>
                   </div>
-
                 </div>
               </div>
-
             </div>
             <button class="see-more-button" @click="showMore">See More</button>
 
@@ -54,38 +52,37 @@ export default {
 
           <div class="card" v-if="deliveries.length">
             <h2 class="card-title"><i class="fa fa-truck"></i>Deliveries on the move</h2>
-            <div class="card-content">
+            <div class="card-content2">
               <div class="delivery" v-for="delivery in deliveries" :key="delivery.id">
-                <div class="card-content2">
-                  <div class="delivery">
-                    <p>Address: {{ delivery.description }}</p>
-                    <p>Package: {{ delivery.package}}</p>
-                    <p>shipping Sart: {{ delivery.shipping}}</p>
-                  </div>
-                </div>
+                <h3>{{ delivery.destiny }}</h3>
+                <p>Responsible: {{ delivery.description }}</p>
+                <p>Start time: {{ delivery.dateTime.date }}</p>
+                <p>Delivery time: {{ delivery.status }}</p>
               </div>
 
             </div>
             <button class="see-more-button1" @click="showMore">See More</button>
           </div>
         </div>
+
       </div>
 
     </div>
   </div>
 </template>
 
-<style scoped>
+<style>
+
 @import 'font-awesome/css/font-awesome.min.css';
 .w-full{
 
   margin-top: -30px;
-  margin-bottom: -200px;
+  margin-bottom: -35px;
+
 }
 
-
 .container{
-  max-width: 1500px;
+
 
   color: #495057;
 }
@@ -95,25 +92,21 @@ export default {
 }
 
 
+
 .title {
   color: white;
   font-size: 45px;
   margin-top: -10px;
-  white-space: nowrap;
-
 }
 
-.subtitle {
-  color: lightgrey;
-  margin-top: -10px;
-  font-size: 25px;
-}
+
 
 .card-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 40px;
+
 }
 
 .card {
@@ -125,14 +118,12 @@ export default {
   flex-direction: column;
   justify-content: center;
 
-
   padding: 5px;
   flex: 1;
   margin-bottom: 20px;
   width: 450px; /* Ajusta este valor a tu gusto */
-  height: 400px; /* Ajusta este valor a tu gusto */
+  height: 450px; /* Ajusta este valor a tu gusto */
 }
-
 
 
 .card-title {
@@ -142,55 +133,44 @@ export default {
 
 .card-content {
 
-  width: 380px; /* Ajusta este valor a tu gusto */
-  height: 500px;
-
-  margin-bottom: 45px;
+  margin-bottom: 100px;
   margin-top: -38px;
   margin-left: 60px;
-
-
-
 
 }
 .card-content1{
 
-  font-size: 14px;
+  font-size: 12px;
   color: white;
   background-color: #303841;
   border-radius: 20px;
-  margin: 5px;
   padding: 5px;
-  width: 300px; /* Ajusta este valor a tu gusto */
-  height: 65px;
+  width: 315px; /* Ajusta este valor a tu gusto */
+  height: 54px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  margin-top: 25px;
+  margin-bottom: 16px;
+  margin-top: 19px;
+
 
 
 }
 .card-content2 {
-  font-size: 16px;
+  font-size: 10px;
   color: white;
   background-color: #303841;
   border-radius: 20px;
   margin: 5px;
   padding: 5px;
-  width: 300px; /* Ajusta este valor a tu gusto */
-  height: 100px;
-  display: flex;
+  width: 380px; /* Ajusta este valor a tu gusto */
+  height: 300px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  margin-top: 25px;
-
-
-
-
+  margin-bottom: 50px;
+  margin-top: -5px;
+  margin-left: 30px;
+  text-indent: 10px;
 }
 
 
@@ -207,55 +187,63 @@ export default {
 }
 
 
+h3 {
+  margin-left: 12px;
+
+}
+
 .date-time {
+  margin-top: -10px;
+  margin-left: 12px;
   display: flex; /* Se utiliza flexbox para el diseño */
-  gap: 10px; /* Ajusta este valor a tu gusto para modificar la separación */
+  gap: 1px; /* Ajusta este valor a tu gusto para modificar la separación */
+}
+
+.date-time2{
+
+  display: flex;
+  gap: 100px;
+  justify-content: center;
 }
 
 .date-time p1 {
-  /* Añade tus estilos aquí */
 
-  /* Por ejemplo, para moverlo un poco a la derecha */
   margin-left: 100px; /* Ajusta este valor a tu gusto */
   margin-top: 6px;
 }
 
-.delivery {
 
-  gap: 10px; /* Ajusta este valor a tu gusto para modificar la separación */
-}
 .see-more-button {
   font-size: 14px;
-  margin-top: -40px;
-  margin-bottom: 32px;
+  margin-top: -50px;
+  margin-bottom: 18px;
   background-color: #ffcc00;
   color: white;
   border: none;
   padding: 5px 5px;
   cursor: pointer;
-  margin-left: 265px;
+  margin-left: 260px;
   border-radius: 20px;
   width: 100px; /* Ajusta este valor a tu gusto */
-  height: 50px;
+  height: 27px;
 }
 
 
 .see-more-button1 {
   font-size: 14px;
   margin-top: -40px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   background-color: #ffcc00;
   color: white;
   border: none;
   padding: 5px 5px;
   cursor: pointer;
 
-  margin-left: 265px;
+  margin-left: 310px;
   border-radius: 20px;
   width: 100px;
-  height: 50px;
+  height: 27px;
 }
-
 
 .custom-image {
   width: 80px; /* Ajusta el ancho según tus preferencias */
@@ -268,11 +256,12 @@ export default {
   display: flex;
   align-items: center; /* Centrar verticalmente */
   justify-content: flex-end; /* Alinear al lado derecho */
-  margin-left: 250px
+
 }
 
 .fa {
   padding-right:15px
 
 }
+
 </style>

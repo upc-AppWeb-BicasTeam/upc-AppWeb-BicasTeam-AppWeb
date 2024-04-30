@@ -39,16 +39,15 @@ export default {
           <div class="card" v-if="activities.length">
             <h2 class="card-title"><i class="fa fa-list"></i>Today's activities</h2>
             <div class="card-content">
-              <div class="activity" v-for="activity in activities" :key="activity.id">
+              <div class="activity" v-for="activity in activities.slice(0, 3)" :key="activity.id">
                 <div class="card-content1">
                   <h3>{{ activity.description }}</h3>
                   <div class="date-time"> <!-- Añadido este div -->
-                    <p>{{ activity.date }}</p>
-                    <p1>{{ activity.time }}</p1>
+                    <p>{{ activity.type }}</p>
+                    <p1>{{ activity.dateTime.date }} - {{ activity.dateTime.time }}</p1>
                   </div>
                 </div>
               </div>
-
             </div>
             <button class="see-more-button" @click="showMore">See More</button>
 
@@ -57,12 +56,13 @@ export default {
           <div class="card" v-if="deliveries.length">
             <h2 class="card-title"><i class="fa fa-truck"></i>Deliveries on the move</h2>
             <div class="card-content2">
-              <div class="delivery" v-for="delivery in deliveries" :key="delivery.id">
+              <div class="delivery" v-for="delivery in deliveries.slice(0, 2)" :key="delivery.id">
                 <h3>{{ delivery.destiny }}</h3>
                 <p>Responsible: {{ delivery.description }}</p>
-                <p>Start time: {{ delivery.date}}</p>
-                <p>Delivery time: {{ delivery.status}}</p>
+                <p>Start time: {{ delivery.dateTime.date }}</p>
+                <p>Delivery time: {{ delivery.status }}</p>
               </div>
+
 
             </div>
             <button class="see-more-button1" @click="showMore">See More</button>
@@ -71,14 +71,12 @@ export default {
         <div class="card2" v-if="conditions.length">
           <h2 class="card-title2"><i class="fa fa-signal"></i>Condition of drivers and vehicles</h2>
           <div class="card-content3">
-            <div class="condition" v-for="condition in conditions" :key="condition.id">
-              <div class="date-time">
-                <p3>Model: {{ condition.model }}</p3>
-
-                <p4>Plate: {{ condition.licensePlate }}</p4>
-
+            <div class="condition" v-for="condition in conditions.slice(0, 1)" :key="condition.id">
+              <div class="date-time2"> <!-- Añadido este div -->
+                <p>Model: {{ condition.model }}</p>
+                <p>License Plate: {{ condition.licensePlate }}</p>
+                <p>Serial Number: {{ condition.serialNumber }}</p>
               </div>
-
             </div>
 
           </div>
@@ -92,16 +90,15 @@ export default {
 <style>
 
 @import 'font-awesome/css/font-awesome.min.css';
-
 .w-full{
 
   margin-top: -30px;
-  margin-bottom: -200px;
+  margin-bottom: -35px;
+
 }
 
-
 .container{
-  max-width: 1500px;
+
 
   color: #495057;
 }
@@ -130,6 +127,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   gap: 40px;
+
 }
 
 .card {
@@ -140,8 +138,6 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-
   padding: 5px;
   flex: 1;
   margin-bottom: 20px;
@@ -161,7 +157,7 @@ export default {
 
   padding: 5px;
 
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   width: 950px; /* Ajusta este valor a tu gusto */
   height: 180px; /* Ajusta este valor a tu gusto */
 }
@@ -173,38 +169,30 @@ export default {
 
 .card-content {
 
-  width: 380px; /* Ajusta este valor a tu gusto */
-  height: 500px;
-
   margin-bottom: 45px;
   margin-top: -38px;
   margin-left: 60px;
 
-
-
-
 }
 .card-content1{
 
-  font-size: 13px;
+  font-size: 12px;
   color: white;
   background-color: #303841;
   border-radius: 20px;
-  margin: 5px;
   padding: 5px;
-  width: 400px; /* Ajusta este valor a tu gusto */
-  height: 35px;
+  width: 310px; /* Ajusta este valor a tu gusto */
+  height: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 16px;
   margin-top: 19px;
 
 
+
 }
 .card-content2 {
-  font-size: 13px;
+  font-size: 10px;
   color: white;
   background-color: #303841;
   border-radius: 20px;
@@ -215,14 +203,15 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
   margin-top: -5px;
   margin-left: 30px;
   text-indent: 10px;
 }
 
 .card-content3{
-  font-size: 13px;
+
+  font-size: 15px;
   color: white;
   background-color: #303841;
   border-radius: 20px;
@@ -232,6 +221,9 @@ export default {
   height: 80px;
   display: flex;
   margin-bottom: 50px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
 }
 
@@ -254,41 +246,31 @@ export default {
   margin-bottom: 5px;
 
 }
+h3 {
+  margin-left: 12px;
+
+}
 
 .date-time {
+  margin-top: -10px;
+  margin-left: 12px;
   display: flex; /* Se utiliza flexbox para el diseño */
-  gap: 10px; /* Ajusta este valor a tu gusto para modificar la separación */
+  gap: 1px; /* Ajusta este valor a tu gusto para modificar la separación */
+}
+
+.date-time2{
+
+  display: flex;
+  gap: 100px;
+  justify-content: center;
 }
 
 .date-time p1 {
-  /* Añade tus estilos aquí */
 
-  /* Por ejemplo, para moverlo un poco a la derecha */
   margin-left: 100px; /* Ajusta este valor a tu gusto */
   margin-top: 6px;
 }
-.date-time p3{
 
-  margin-left: 100px;
-  margin-top: 10px;
-
-}
-
-.date-time p4 {
-  /* Añade tus estilos aquí */
-
-  /* Por ejemplo, para moverlo un poco a la derecha */
-  margin-left: 300px; /* Ajusta este valor a tu gusto */
-  margin-top: 10px;
-}
-
-.date-time p5 {
-  /* Añade tus estilos aquí */
-
-  /* Por ejemplo, para moverlo un poco a la derecha */
-  margin-left: 245px; /* Ajusta este valor a tu gusto */
-  margin-top: 10px;
-}
 
 .see-more-button {
   font-size: 14px;
@@ -309,7 +291,7 @@ export default {
 .see-more-button1 {
   font-size: 14px;
   margin-top: -40px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   background-color: #ffcc00;
   color: white;
   border: none;
@@ -354,4 +336,5 @@ export default {
   padding-right:15px
 
 }
+
 </style>
