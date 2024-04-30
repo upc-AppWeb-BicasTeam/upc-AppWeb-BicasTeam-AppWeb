@@ -6,6 +6,7 @@ import registerInformationSuccessfullyComponent from "../public/pages/register-i
 import homeProfileBusinessmanComponent from "../public/pages/home-profile-businessman.component.vue";
 import homeProfileDriverComponent from "../public/pages/home-profile-driver.component.vue";
 import userProfileComponent from "../public/pages/userProfile.component.vue";
+import carrierReportComponent from "../public/pages/carrier-report.component.vue";
 
 const router  = createRouter({
     history: createWebHistory(),
@@ -17,6 +18,7 @@ const router  = createRouter({
         { path: '/:id/home-businessman-menu',    component: homeProfileBusinessmanComponent},
         { path: '/:id/home-driver-menu',    component:  homeProfileDriverComponent},
         { path: '/:id/userprofile', component: userProfileComponent},
+        { path: '/report/view', component: carrierReportComponent},
         {path:'/',   redirect:'/login'},
 
     ]

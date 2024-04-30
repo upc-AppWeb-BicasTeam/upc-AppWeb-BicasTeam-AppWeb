@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import './style.css'
-import App from './App.vue'
+import App from './app.vue'
 
-import 'primevue/resources/themes/md-dark-deeppurple/theme.css'
+import 'primevue/resources/themes/md-light-indigo/theme.css'
 import 'primevue/resources/primevue.min.css'
 
 import 'primeicons/primeicons.css'
@@ -16,6 +16,8 @@ import Card from "primevue/card";
 import ConfirmDialog from "primevue/confirmdialog";
 import Avatar from "primevue/avatar";
 import DataView from "primevue/dataview";
+import DataTable from "primevue/datatable";
+import Toolbar from "primevue/toolbar";
 import Column from "primevue/column";
 import Button from "primevue/button";
 import Row from "primevue/row";
@@ -29,6 +31,8 @@ app.use(PrimeVue,{ripple:true})
     .use(router)
     .component('pv-sidebar', Sidebar)
     .component('pv-card', Card)
+    .component('pv-table', DataTable)
+    .component('pv-toolbar', Toolbar)
     .component('pv-avatar', Avatar)
     .component('pv-confirm-dialog', ConfirmDialog)
     .component('pv-data-view', DataView)
