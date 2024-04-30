@@ -45,7 +45,7 @@ export default {
           <a  class="m-2">
             <h2>{{name}}</h2>
             <h2>{{lastName}}</h2>
-            <h3>Businessman</h3>
+            <h3>{{type}}</h3>
           </a>
         </div>
         <div>

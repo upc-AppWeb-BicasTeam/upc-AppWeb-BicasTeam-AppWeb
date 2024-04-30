@@ -4,16 +4,13 @@ export class VehiclesApiService{
     getAllVehicles() {
         return http.get('/moviGestion-cya/vehicle');
     }
-    getVehiclesById(id){
-        return http.get(`/moviGestion-iam/${id}`)
+    getVehicleById(id){
+        return http.get(`/moviGestion-cya/vehicle?id=${id}`)
     }
     getUsers(){
         return http.get('/moviGestion-iam/users');
     }
 
-    getVehicleByName(name){
-        return http.get(`/moviGestion-cya/vehicles?model=${name}`);
-    }
 
     addVehicle(vehicle){
         return http.post("/moviGestion-cya/vehicles",vehicle);
