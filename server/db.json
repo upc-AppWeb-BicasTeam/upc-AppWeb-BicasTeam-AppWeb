@@ -1,34 +1,74 @@
 {
-  "driver": [
+  "users": [
     {
-      "id": 1,
-      "name": "Josep Doe",
-      "description": "Dear, there is traffic on Higuereta Oval. Please warn nearby drivers not to come this way.",
-      "dateTime":
-      {
-        "date": "2024-03-10",
-        "time": "10:25:00"
-      }
+      "id": "1",
+      "email": "admin",
+      "password": "admin",
+      "type": "businessman"
     },
     {
-      "id": 2,
-      "name": "Arnold Smith",
-      "description": "Paseo de Republica Avenue is free this time.",
-      "dateTime":
-      {
-        "date": "2024-03-27",
-        "time": "13:40:00"
-      }
-    },
-    {
-      "id": 3,
-      "name": "Whitney Houston",
-      "description": "There was an accident between Javier Prado Av. and Aviacion Av. Please take precautions.",
-      "dateTime":
-      {
-        "date": "2024-04-05",
-        "time": "09:55:00"
-      }
+      "id": "2",
+      "email": "juan",
+      "password": "juan",
+      "type": "carrier"
     }
+  ],
+  "activities": [
+    {
+      "title": "Meeting with the Marketing team",
+      "date": "10/03/2024",
+      "time": "9:30 a.m."
+    },
+    {
+      "title": "Preparation of the risk report",
+      "date": "10/03/2024",
+      "time": "11:45 a.m."
+    }
+  ],
+  "condition": [
+    {
+      "driver": "Jane Doe",
+      "vehicle": "Toyota Hice 2023",
+      "status": "In delivery",
+      "conditions": "Semi-new"
+    }
+  ],
+  "deliveries": [
+    {
+      "title": "From Surco to Canaval Moreyra",
+      "responsible": "Jane Doe",
+      "star": "Jane Doe",
+      "delivery": "Jane Doe"
+    }
+  ],
+  "activities-driver": [
+    {
+      "title": "Coordinate the reception of packages",
+      "date": "10/03/2024",
+      "time": "10:30 a.m."
+    },
+    {
+      "title": "Meeting with the Business Man",
+      "date": "10/03/2024",
+      "time": "1:20 p.m."
+    },
+    {
+      "title": "Delivering a television in Surco",
+      "date": "10/03/2024",
+      "time": "3:00 a.m."
+    }
+  ],
+  "deliveries-driver": [
+    {
+      "address": "830 Canaval Moreyra AV.",
+      "package": "Sound System",
+      "shipping": "9:30 a.m."
+    },
+    {
+      "address": "AV.Arequipa 1328",
+      "package": "television",
+      "shipping": "3:00 a.m."
+    }
+
   ]
 }
