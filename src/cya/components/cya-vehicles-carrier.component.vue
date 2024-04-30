@@ -3,16 +3,18 @@ import {VehiclesApiService} from "../services/vehicules-api.service.js";
 
 export default {
   name: "cya-vehicles-carrier",
-  
   title: "cya-vehicles-carrier",
   data() {
     return {
       vehiclesApi: new VehiclesApiService(),
       vehicles: [],
+      id: this.$route.params.id,
     };
   },
   created(){
     this.getDataVehicles();
+    this.
+    console.log(this.id)
   },
   methods: {
     getDataVehicles() {
@@ -51,7 +53,7 @@ export default {
   </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .container {
   border: 1px solid;
   width: 350px;

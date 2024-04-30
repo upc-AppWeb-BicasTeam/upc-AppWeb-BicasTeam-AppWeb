@@ -4,6 +4,9 @@ export class VehiclesApiService{
     getAllVehicles() {
         return http.get('/moviGestion-cya/vehicle');
     }
+    getVehiclesById(id){
+        return http.get(`/moviGestion-iam/${id}`)
+    }
     getUsers(){
         return http.get('/moviGestion-iam/users');
     }
