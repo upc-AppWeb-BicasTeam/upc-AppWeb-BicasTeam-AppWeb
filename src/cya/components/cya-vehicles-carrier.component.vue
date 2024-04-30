@@ -1,6 +1,5 @@
 <script>
 import {VehiclesApiService} from "../services/vehicules-api.service.js";
-
 export default {
   name: "cya-vehicles-carrier",
   title: "cya-vehicles-carrier",

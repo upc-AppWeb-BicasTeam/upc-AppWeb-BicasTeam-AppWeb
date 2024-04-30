@@ -26,4 +26,8 @@ export class VehiclesApiService{
     assignVehicleToCarrier(vehicleId,carrierId){
         return http.put(`/moviGestion-cya/vehicles/${vehicleId}`,{carrierId});
     }
+
+    getVehiclesById1(id){
+        return http.get(`/moviGestion-cya/vehicle?id=${id}`)
+    }
 }
