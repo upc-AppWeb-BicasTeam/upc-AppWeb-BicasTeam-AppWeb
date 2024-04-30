@@ -28,7 +28,20 @@
       {
         "date": "2024-04-05",
         "time": "09:55:00"
-      }
+      },
+  ]
+  "vehicle": [
+    {
+      "id": 1,
+      "licensePlate": "AAA-321",
+      "model": "Chevrolet Corvette",
+      "serialNumber": "IO547SMX"
+    },
+    {
+      "id": 2,
+      "licensePlate": "ABC-123",
+      "model": "KIA Rio",
+      "serialNumber": "RQ9ZRQ49"
     }
   ],
   "activities": [
