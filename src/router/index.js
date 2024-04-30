@@ -29,7 +29,7 @@ const router  = createRouter({
         {path:'/:id/report/carrier', component: CarrierReportComponent},
         {path:'/:id/organization', component: OrganizationShipmentComponent},
         {path:'/:id/organization/view', component: ViewShipmentsComponent},
-        {path:'/', redirect:'/login'},
+        {path:'/upc-AppWeb-BicasTeam-AppWeb.github.io', redirect:'/login'},
         {path:'/**', redirect:'/login'}
 
     ]
