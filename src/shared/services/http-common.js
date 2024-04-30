@@ -5,7 +5,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 * @type {axios. AxiosInstance}
 * */
 const http = axios.create({
-    baseURL : "http://localhost:3000",
+    baseURL : "https://my-json-server.typicode.com/upc-AppWeb-BicasTeam",
     headers:{'Content-type':'application/json'}
 });
 

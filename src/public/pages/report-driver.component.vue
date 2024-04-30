@@ -14,16 +14,20 @@ export default {
     };
   },
   created(){
-    this.getDataDriver();
+    this.getDataReport();
   },
   methods: {
-    getDataDriver(){
-      this.reportsApi.getAllReports()
-          .then(response => {
-            this.reports = response.data;
-            console.log(response.data);
-            console.log(this.reports);
-          })
+    async getDataReport() {
+      const response = await this.reportsApi.getAllReports();
+      const reports = response.data;
+      for (let report of reports) {
+        const userResponse = await this.reportsApi.findUserByID(report['id-user']);
+        console.log(userResponse);
+        const user = userResponse.data[0];
+        report.name = `${user.name} ${user.lastName}`;
+      }
+      this.reports = reports;
+      console.log(this.reports);
     },
     openNew(){
       this.report = {};
@@ -35,15 +39,20 @@ export default {
       this.submitted = false;
     },
     saveReport(){
+      if (!this.report.name || !this.report.description) {
+        this.submitted = true;
+        return;
+      }
       this.reportDialog= false;
+      this.submitted = true;
     }
   }
 }
 </script>
 
 <template>
-  <div class="flex justify-content-between flex-wrap">
-    <div class="ml-3">
+  <div class="flex justify-content-between flex-wrap container">
+    <div class="text-900 font-medium text-xl mb-3">
     <h1>Reports</h1>
     <p>Driver report list</p>
     </div>
@@ -51,7 +60,7 @@ export default {
     <pv-button label="New" icon="pi pi-plus" severity="success" class="mr-5" @click="openNew"/>
     </div>
   </div>
-  <div>
+  <div class="p-5 card-container">
     <!--CARD-TABLE-->
     <pv-card>
       <template #content>
@@ -74,6 +83,7 @@ export default {
       <div class="field">
         <label for="description">Description</label>
         <textarea id="description" v-model="report.description" required="true" rows="3" cols="20" class="p-inputtext" />
+        <small class="p-error" v-if="submitted && !report.description">Description is required.</small>
       </div>
 
       <template #footer>
@@ -99,5 +109,8 @@ export default {
   background-color: #ddd;
   color: #333;
   border: none;
+}
+.card-container {
+  align-self: center;
 }
 </style>
