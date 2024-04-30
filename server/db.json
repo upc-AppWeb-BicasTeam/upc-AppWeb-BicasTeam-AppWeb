@@ -12,5 +12,63 @@
       "model": "KIA Rio",
       "serialNumber": "RQ9ZRQ49"
     }
+  ],
+  "activities": [
+    {
+      "title": "Meeting with the Marketing team",
+      "date": "10/03/2024",
+      "time": "9:30 a.m."
+    },
+    {
+      "title": "Preparation of the risk report",
+      "date": "10/03/2024",
+      "time": "11:45 a.m."
+    }
+  ],
+  "condition": [
+    {
+      "driver": "Jane Doe",
+      "vehicle": "Toyota Hice 2023",
+      "status": "In delivery",
+      "conditions": "Semi-new"
+    }
+  ],
+  "deliveries": [
+    {
+      "title": "From Surco to Canaval Moreyra",
+      "responsible": "Jane Doe",
+      "star": "Jane Doe",
+      "delivery": "Jane Doe"
+    }
+  ],
+  "activities-driver": [
+    {
+      "title": "Coordinate the reception of packages",
+      "date": "10/03/2024",
+      "time": "10:30 a.m."
+    },
+    {
+      "title": "Meeting with the Business Man",
+      "date": "10/03/2024",
+      "time": "1:20 p.m."
+    },
+    {
+      "title": "Delivering a television in Surco",
+      "date": "10/03/2024",
+      "time": "3:00 a.m."
+    }
+  ],
+  "deliveries-driver": [
+    {
+      "address": "830 Canaval Moreyra AV.",
+      "package": "Sound System",
+      "shipping": "9:30 a.m."
+    },
+    {
+      "address": "AV.Arequipa 1328",
+      "package": "television",
+      "shipping": "3:00 a.m."
+    }
+
   ]
 }

@@ -1,12 +1,11 @@
 import axios from "axios";
 
-/*
-* Create an Axios instance with a base URL and JSON content type.
-* @type {axios. AxiosInstance}
-* */
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+
 const http = axios.create({
-    baseURL : "https://my-json-server.typicode.com/upc-AppWeb-BicasTeam",
-    headers:{'Content-type':'application/json'}
+    baseURL: "https://my-json-server.typicode.com/upc-AppWeb-BicasTeam",
+    headers: { 'Content-type': 'application/json' }
 });
 
 export default http;
