@@ -20,16 +20,16 @@ const router  = createRouter({
         {path:'/register', component:registerComponent},
         {path:'/register/:type', component: registerInformationComponent},
         {path:'/register/successfully', component:registerInformationSuccessfullyComponent},
-        {path:'/:id/home-businessman-menu',    component: homeProfileBusinessmanComponent},
-        {path:'/:id/home-driver-menu',    component:  homeProfileDriverComponent},
+        {path:'/:id/home-businessman-menu', component: homeProfileBusinessmanComponent},
+        {path:'/:id/home-driver-menu', component:  homeProfileDriverComponent},
         {path:'/:id/userprofile', component: userProfileComponent},
         {path:'/:id/vehicles-carrier', component: DisplayVehiclesCarrierComponent },
         {path:'/:id/vehicles-businessman', component: DisplayVehiclesBusinessmanComponent },
-        { path: '/:id/report/businessman', component: BusinessmanReportComponent},
-        { path: '/:id/report/carrier', component: CarrierReportComponent},
-        { path: '/:id/organization', component: OrganizationShipmentComponent},
-        { path: '/:id/organization/view', component: ViewShipmentsComponent},
-        {path:'/',   redirect:'/login'},
+        {path:'/:id/report/businessman', component: BusinessmanReportComponent},
+        {path:'/:id/report/carrier', component: CarrierReportComponent},
+        {path:'/:id/organization', component: OrganizationShipmentComponent},
+        {path:'/:id/organization/view', component: ViewShipmentsComponent},
+        {path:'/', redirect:'/login'},
 
     ]
 });

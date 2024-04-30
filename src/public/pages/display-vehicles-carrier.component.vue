@@ -19,5 +19,7 @@ export default defineComponent({
 <style scoped>
 .container{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

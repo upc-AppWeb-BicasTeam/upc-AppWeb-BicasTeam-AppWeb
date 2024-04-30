@@ -24,7 +24,7 @@ export default {
     <div>
       <div class="text-900 font-medium text-xl mb-3">Profile</div>
         <p class="m-0 mb-4 p-0 text-600 line-height-3 mr-3">
-          Odio euismod lacinia at quis risus sed vulputate odio. Non nisi est sit amet. Egestas integer eget aliquet nibh praesent tristique magna.
+          Manage your profile information here.
         </p>
         <div class="surface-card p-4 shadow-2 border-round">
           <div class="grid formgrid p-fluid">
