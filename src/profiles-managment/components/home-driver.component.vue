@@ -83,27 +83,34 @@ export default {
   </div>
 </template>
 
-<style scoped>
+<style>
 
 @import 'font-awesome/css/font-awesome.min.css';
+.w-full{
 
-.welcome-container {
-  display: flex;
-  align-items: center;
+  margin-top: -30px;
+  margin-bottom: -35px;
 
-}
-
-
-.title{
-
-
-  margin-right: 180px;
 }
 
 .container{
 
+
   color: #495057;
 }
+
+.flex-row{
+  justify-content: flex-end;
+}
+
+
+
+.title {
+  color: white;
+  font-size: 45px;
+  margin-top: -10px;
+}
+
 
 
 .card-container {
@@ -204,6 +211,12 @@ h3 {
   gap: 1px; /* Ajusta este valor a tu gusto para modificar la separación */
 }
 
+.date-time2{
+
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+}
 
 .date-time p1 {
 
@@ -250,8 +263,17 @@ h3 {
   margin-left: 200px; /* Ajusta la posición horizontal */
 }
 
+<<<<<<< HEAD
 .title[data-v-9645df83] {
   margin-right: 0 !important;
+=======
+
+.welcome-container {
+  display: flex;
+  align-items: center; /* Centrar verticalmente */
+  justify-content: flex-end; /* Alinear al lado derecho */
+
+>>>>>>> parent of 26c5b8d (feat: merge and implemented shipments)
 }
 
 .fa {

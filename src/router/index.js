@@ -25,11 +25,19 @@ const router  = createRouter({
         {path:'/:id/userprofile', component: userProfileComponent},
         {path:'/:id/vehicles-carrier', component: DisplayVehiclesCarrierComponent },
         {path:'/:id/vehicles-businessman', component: DisplayVehiclesBusinessmanComponent },
+<<<<<<< HEAD
         {path:'/:id/report/businessman', component: BusinessmanReportComponent},
         {path:'/:id/report/carrier', component: CarrierReportComponent},
         {path:'/:id/organization', component: OrganizationShipmentComponent},
         {path:'/:id/organization/view', component: ViewShipmentsComponent},
         {path:'/', redirect:'/login'},
+=======
+        { path: '/:id/report/businessman', component: BusinessmanReportComponent},
+        { path: '/:id/report/carrier', component: CarrierReportComponent},
+        { path: '/organization', component: OrganizationShipmentComponent},
+        { path: '/organization/view', component: ViewShipmentsComponent},
+        {path:'/',   redirect:'/login'},
+>>>>>>> parent of 26c5b8d (feat: merge and implemented shipments)
 
     ]
 });
