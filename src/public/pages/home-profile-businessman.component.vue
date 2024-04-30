@@ -1,17 +1,15 @@
 
-
-
-
 <script>
-
+import Sidebar from "../components/sidebar.component.vue";
 import HomeBusinessman from "../../profiles-managment/components/home-businessman.component.vue";
-import sidebarBusinessmanComponent from "../../profiles-managment/components/sidebar-businessman.component.vue";
+
 
 export default {
   name: "Businessman-Profile",
   components: {
     HomeBusinessman,
-    sidebarBusinessmanComponent
+    Sidebar
+
 
   },
 }
@@ -19,7 +17,7 @@ export default {
 
 <template>
   <div class="container">
-    <sidebar-businessman-component/>
+    <sidebar></sidebar>
     <home-businessman/>
   </div>
 </template>

@@ -21,6 +21,11 @@ export default {
       this.lastName = data.data[0].lastName
     })
   },
+  methods:{
+    goToProfile(){
+      this.$router.push(`/${this.id}/userprofile`)
+    }
+  }
 }
 </script>
 
@@ -28,12 +33,12 @@ export default {
   <div class="card flex justify-content-center justify-content-between flex-column-">
     <pv-sidebar visible="visible" :showCloseIcon="false" :showHeader="false">
       <div class="flex flex-column align-items-left h-full justify-content-around z-">
-        <div class="flex justify-content-center align-items-center mr-6">
-          <pv-avatar image="https://www.gravatar.com/avatar/05dfd4b41340d09cae045235eb0893c3?d=mp" class="mr-2 flex align-items-center justify-content-center" size="xlarge" shape="circle"></pv-avatar>
-          <a class="m-2">
-            <h2>{{ name }}</h2>
-            <h2>{{ lastName }}</h2>
-            <h3>{{ type }}</h3>
+        <div @click="goToProfile" class="flex justify-content-center align-items-center mr-6 flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+          <img src="https://www.capitalcoahuila.com.mx/wp-content/uploads/2022/11/CARL-e1669117013260.jpeg" id="icon" alt="User Icon" class="custom-image"size="xlarge" shape="circle">
+          <a  class="m-2">
+            <h2>{{name}}</h2>
+            <h2>{{lastName}}</h2>
+            <h3>Businessman</h3>
           </a>
         </div>
         <div>
