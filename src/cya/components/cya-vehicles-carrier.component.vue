@@ -67,7 +67,7 @@ export default {
 <style scoped>
 .container {
   border: 1px solid;
-  width: 250px;
+  width: 350px;
   text-align: center;
   background: darkgray;
   z-index: 1;
