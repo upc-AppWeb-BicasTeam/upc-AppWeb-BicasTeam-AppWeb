@@ -14,8 +14,9 @@ import OrganizationShipmentComponent from "../public/pages/organization-shipment
 import ViewShipmentsComponent from "../public/pages/view-shipments.component.vue";
 
 const router  = createRouter({
-    history: createWebHistory(),
-    routes: [      
+    history: createWebHistory(process.env.NODE_ENV === 'production' ? '/test2/' : '/'),
+    routes: [
+        {path:'/',   redirect:'/login'},
         {path:'/login',component:loginComponent},
         {path:'/register', component:registerComponent},
         {path:'/register/:type', component: registerInformationComponent},
@@ -29,7 +30,7 @@ const router  = createRouter({
         { path: '/:id/report/carrier', component: CarrierReportComponent},
         { path: '/:id/organization', component: OrganizationShipmentComponent},
         { path: '/:id/organization/view', component: ViewShipmentsComponent},
-        {path:'/',   redirect:'/login'},
+
 
     ]
 });
