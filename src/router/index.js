@@ -1,4 +1,5 @@
 import {createRouter, createWebHistory} from "vue-router";
+
 import DisplayVehiclesCarrierComponent from "../public/pages/display-vehicles-carrier.component.vue";
 import loginComponent from "../public/pages/login.component.vue";
 import registerComponent from "../public/pages/register.component.vue";
@@ -25,11 +26,12 @@ const router  = createRouter({
         {path:'/:id/userprofile', component: userProfileComponent},
         {path:'/:id/vehicles-carrier', component: DisplayVehiclesCarrierComponent },
         {path:'/:id/vehicles-businessman', component: DisplayVehiclesBusinessmanComponent },
-        { path: '/:id/report/businessman', component: BusinessmanReportComponent},
-        { path: '/:id/report/carrier', component: CarrierReportComponent},
-        { path: '/:id/organization', component: OrganizationShipmentComponent},
-        { path: '/:id/organization/view', component: ViewShipmentsComponent},
-        {path:'/',   redirect:'/login'},
+        {path:'/:id/report/businessman', component: BusinessmanReportComponent},
+        {path:'/:id/report/carrier', component: CarrierReportComponent},
+        {path:'/:id/organization', component: OrganizationShipmentComponent},
+        {path:'/:id/organization/view', component: ViewShipmentsComponent},
+        {path:'/upc-AppWeb-BicasTeam-AppWeb.github.io', redirect:'/login'},
+        {path:'/**', redirect:'/login'}
 
     ]
 });
