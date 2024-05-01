@@ -14,7 +14,7 @@ import OrganizationShipmentComponent from "../public/pages/organization-shipment
 import ViewShipmentsComponent from "../public/pages/view-shipments.component.vue";
 
 const router  = createRouter({
-    history: createWebHistory(process.env.NODE_ENV === 'production' ? '/test2/' : '/'),
+    history: createWebHistory(process.env.NODE_ENV === 'production' ? '/upc-AppWeb-BicasTeam-AppWeb.github.io/' : '/'),
     routes: [
         {path:'/',   redirect:'/login'},
         {path:'/login',component:loginComponent},
