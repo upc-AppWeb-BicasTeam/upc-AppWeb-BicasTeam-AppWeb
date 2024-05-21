@@ -50,7 +50,7 @@ export default {
       if(this.type === "businessman"){
         this.$router.push(`/${this.id}/organization`)
       }else{
-        this.$router.push(`/${this.id}/organization/view'`)
+        this.$router.push(`/${this.id}/organization/view`)
       }
     }
   }
