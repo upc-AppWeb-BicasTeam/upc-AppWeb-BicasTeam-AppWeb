@@ -14,22 +14,23 @@ import OrganizationShipmentComponent from "../public/pages/organization-shipment
 import ViewShipmentsComponent from "../public/pages/view-shipments.component.vue";
 
 const router  = createRouter({
-    history: createWebHistory(),
-    routes: [      
+    history: createWebHistory(process.env.NODE_ENV === 'production' ? '/upc-AppWeb-BicasTeam-AppWeb.github.io/' : '/'),
+    routes: [
+        {path:'/',   redirect:'/login'},
         {path:'/login',component:loginComponent},
         {path:'/register', component:registerComponent},
         {path:'/register/:type', component: registerInformationComponent},
         {path:'/register/successfully', component:registerInformationSuccessfullyComponent},
-        {path:'/:id/home-businessman-menu', component: homeProfileBusinessmanComponent},
-        {path:'/:id/home-driver-menu', component:  homeProfileDriverComponent},
+        {path:'/:id/home-businessman-menu',    component: homeProfileBusinessmanComponent},
+        {path:'/:id/home-driver-menu',    component:  homeProfileDriverComponent},
         {path:'/:id/userprofile', component: userProfileComponent},
         {path:'/:id/vehicles-carrier', component: DisplayVehiclesCarrierComponent },
         {path:'/:id/vehicles-businessman', component: DisplayVehiclesBusinessmanComponent },
-        {path:'/:id/report/businessman', component: BusinessmanReportComponent},
-        {path:'/:id/report/carrier', component: CarrierReportComponent},
-        {path:'/:id/organization', component: OrganizationShipmentComponent},
-        {path:'/:id/organization/view', component: ViewShipmentsComponent},
-        {path:'/', redirect:'/login'},
+        { path: '/:id/report/businessman', component: BusinessmanReportComponent},
+        { path: '/:id/report/carrier', component: CarrierReportComponent},
+        { path: '/:id/organization', component: OrganizationShipmentComponent},
+        { path: '/:id/organization/view', component: ViewShipmentsComponent},
+
 
     ]
 });

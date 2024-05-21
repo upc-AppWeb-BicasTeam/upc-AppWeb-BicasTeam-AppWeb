@@ -1,6 +1,6 @@
 <script>
 import { HomeApiService } from "../services/home-api.service.js";
-import {IamApiService} from "../../iam/services/iam-api.service.js";
+
 export default {
   name: "home-driver",
   title: "Home",
@@ -8,21 +8,9 @@ export default {
     return {
       activities: [],
       deliveries: [],
-      name:'',
-      lastName:'',
-      type:'',
-      visible: true,
-      id: this.$route.params.id,
-      api: new IamApiService()
     };
   },
   created() {
-    this.api.findUserById(this.id).then(data=>{
-      this.type = data.data[0].type;
-      this.name = data.data[0].name;
-      this.lastName = data.data[0].lastName
-    });
-
     const apiService = new HomeApiService();
     apiService.getAllActivitiesDriver().then(response => {
       this.activities = response.data;
@@ -40,7 +28,7 @@ export default {
     <div>
       <div class="w-full align-content-center">
         <div class="welcome-container">
-          <h1 class="title">Welcome, {{name}} {{lastName}}</h1>
+          <h1 class="title">Welcome, David Doe!</h1>
           <img src="../../public/assets/logo.png" id="icon" alt="User Icon" class="custom-image">
         </div>
         <p class="subtitle">Let's start</p>
@@ -263,18 +251,8 @@ h3 {
   margin-left: 200px; /* Ajusta la posición horizontal */
 }
 
-<<<<<<< HEAD
-.title[data-v-9645df83] {
-  margin-right: 0 !important;
-=======
 
-.welcome-container {
-  display: flex;
-  align-items: center; /* Centrar verticalmente */
-  justify-content: flex-end; /* Alinear al lado derecho */
 
->>>>>>> parent of 26c5b8d (feat: merge and implemented shipments)
-}
 
 .fa {
   padding-right:15px

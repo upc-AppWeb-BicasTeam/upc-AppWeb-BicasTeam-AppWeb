@@ -160,7 +160,6 @@ export default {
   align-items: flex-start;
   margin-bottom: 10px;
 }
-
 .field input{
   flex-grow: 1;
 }

@@ -52,12 +52,12 @@ export default {
 
 <template>
   <div class="flex justify-content-between flex-wrap container">
-    <div class="text-900 font-medium text-xl mb-3 z-1">
+    <div class="text-900 font-medium text-xl mb-3">
     <h1>Reports</h1>
     <p>Driver report list</p>
     </div>
     <div class="flex align-items-center justify-content-center">
-    <pv-button label="New" icon="pi pi-plus" severity="success"  @click="openNew"/>
+    <pv-button label="New" icon="pi pi-plus" severity="success" class="mr-5" @click="openNew"/>
     </div>
   </div>
   <div class="p-5 card-container">
@@ -96,21 +96,6 @@ export default {
 </template>
 
 <style>
-.flex {
-  z-index: 1;
-}
-
-.p-button-icon{
-  text-align: left;
-}
-
-.card-container{
-  z-index: 1 !important;
-  margin-right: 5rem;
-}
-.text-900{
-  z-index:1 !important;
-}
 .field label {
   font-weight: bold;
   color: #333;
@@ -127,9 +112,5 @@ export default {
 }
 .card-container {
   align-self: center;
-}
-
-.text-900{
-  margin-left: 23.5rem;
 }
 </style>

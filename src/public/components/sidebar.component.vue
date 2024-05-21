@@ -1,4 +1,5 @@
 <script>
+import { ProfileApiService } from "../../profiles-managment/services/profile-api.service.js";
 import {IamApiService} from "../../iam/services/iam-api.service.js";
 
 export default {
@@ -117,36 +118,25 @@ export default {
 .p-sidebar-mask{
   z-index: 0 !important;
 }
-
 body{
   background-color: #5D6D7E;
-  color: #ffffff;
 }
-
 .custom-image {
   border-radius: 50%;
 }
 
+
 .mr-6
 {
   margin-right: 2px;
+
+
+
 }
 
 .custom-image {
   border-radius: 50%;
   margin-left: 0 !important;
-}
-
-a h3{
-  margin-left: 0;
-}
-
-.p-sidebar h3::first-letter {
-  text-transform: uppercase;
-}
-
-.p-sidebar ul li:hover {
-  background-color: gray;
 }
 
 </style>

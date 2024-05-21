@@ -1,7 +1,7 @@
 
 <script>
 import { HomeApiService } from "../services/home-api.service.js";
-import {IamApiService} from "../../iam/services/iam-api.service.js";
+
 export default {
   name: "home-businessman",
   title: "Home",
@@ -10,20 +10,9 @@ export default {
       activities: [],
       conditions: [],
       deliveries: [],
-      name:'',
-      lastName:'',
-      type:'',
-      visible: true,
-      id: this.$route.params.id,
-      api: new IamApiService()
     };
   },
   created() {
-    this.api.findUserById(this.id).then(data=>{
-      this.type = data.data[0].type;
-      this.name = data.data[0].name;
-      this.lastName = data.data[0].lastName
-    });
     const apiService = new HomeApiService();
     apiService.getAllActivities().then(response => {
       this.activities = response.data;
@@ -42,7 +31,7 @@ export default {
     <div>
       <div class="w-full align-content-center">
         <div class="welcome-container">
-          <h1 class="title">Welcome! {{name}}, {{lastName}}</h1>
+          <h1 class="title">Welcome, Jhon Doe!</h1>
           <img src="../../public/assets/logo.png" id="icon" alt="User Icon" class="custom-image">
         </div>
         <p class="subtitle">Let's start</p>
@@ -101,21 +90,36 @@ export default {
 <style>
 
 @import 'font-awesome/css/font-awesome.min.css';
+.w-full{
+
+  margin-top: -30px;
+  margin-bottom: -35px;
+
+}
 
 .container{
+
+
   color: #495057;
-  margin-left: 0 !important;
 }
+
+.flex-row{
+  justify-content: flex-end;
+}
+
+
 
 .title {
   color: white;
-  text-align:center;
+  font-size: 45px;
+  margin-top: -10px;
 }
 
 .subtitle {
   color: lightgrey;
+  margin-top: -10px;
   font-size: 25px;
-  text-align: center;
+  margin-left: 400px;
 }
 
 .card-container {
@@ -200,7 +204,7 @@ export default {
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-  margin-top: -20px;
+  margin-top: -5px;
   margin-left: 30px;
   text-indent: 10px;
 }
@@ -286,13 +290,14 @@ h3 {
 
 .see-more-button1 {
   font-size: 14px;
-  margin-top: -45px;
+  margin-top: -40px;
   margin-bottom: 5px;
   background-color: #ffcc00;
   color: white;
   border: none;
   padding: 5px 5px;
   cursor: pointer;
+
   margin-left: 310px;
   border-radius: 20px;
   width: 100px;
@@ -322,16 +327,14 @@ h3 {
 
 .welcome-container {
   display: flex;
-  align-items: center;
-  flex-direction: column-reverse;
+  align-items: center; /* Centrar verticalmente */
+  justify-content: flex-end; /* Alinear al lado derecho */
+  margin-left: 250px
 }
 
 .fa {
   padding-right:15px
-}
 
-.flex{
-  margin: 0;
 }
 
 </style>
