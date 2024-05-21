@@ -1,5 +1,5 @@
 <script>
-import {ShipmentApiService} from "../../shared/services/shipment-api.service.js";
+import {ShipmentApiService} from "../services/shipment-api.service.js";
 export default {
   name: "organization-businessman",
   data(){

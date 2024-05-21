@@ -1,5 +1,5 @@
 <script>
-import {VehiclesApiService} from "../services/vehicules-api.service.js";
+import {VehiclesApiService} from "./services/vehicules-api.service.js";
 import {IamApiService} from "../../iam/services/iam-api.service.js";
 
 export default {

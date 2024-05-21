@@ -1,6 +1,6 @@
 <script>
-import ReportView from "../components/report-view.component.vue";
-import ReportDriver from "../components/report-driver.component.vue";
+import ReportView from "../../service-execution/reports-management/report-view.component.vue";
+import ReportDriver from "../../service-execution/reports-management/report-driver.component.vue";
 import Sidebar from "../components/sidebar.component.vue";
 
 export default {

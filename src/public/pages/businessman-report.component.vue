@@ -1,7 +1,7 @@
 <script>
 import Sidebar from "../components/sidebar.component.vue";
-import ReportViewComponent from "../components/report-view.component.vue";
-import ReportView from "../components/report-view.component.vue";
+import ReportViewComponent from "../../service-execution/reports-management/report-view.component.vue";
+import ReportView from "../../service-execution/reports-management/report-view.component.vue";
 
 export default {
   name: "carrier-report",

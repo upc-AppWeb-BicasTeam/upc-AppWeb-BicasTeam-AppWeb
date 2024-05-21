@@ -1,5 +1,5 @@
 <script>
-import {ReportsApiService} from "../../report-view/services/reports-api.service.js";
+import {ReportsApiService} from "./services/reports-api.service.js";
 
 export default {
   name: "report-driver",

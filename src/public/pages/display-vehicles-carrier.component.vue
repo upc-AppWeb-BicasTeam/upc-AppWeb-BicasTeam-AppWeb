@@ -1,7 +1,7 @@
 <script>
 import {defineComponent} from "vue";
 import Sidebar from "../components/sidebar.component.vue";
-import CyaVehiclesCarrier from "../../cya/components/cya-vehicles-carrier.component.vue";
+import CyaVehiclesCarrier from "../../service-execution/vehicles-management/cya-vehicles-carrier.component.vue";
 
 
 export default defineComponent({
