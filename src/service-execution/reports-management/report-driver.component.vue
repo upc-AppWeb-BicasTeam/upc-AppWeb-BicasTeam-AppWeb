@@ -8,6 +8,8 @@ export default {
     return {
       reports: null,
       report: null,
+      name : "",
+      description : "",
       reportsApi: new ReportsApiService(),
       submitted: false,
       reportDialog: false,
@@ -39,7 +41,16 @@ export default {
       this.submitted = false;
     },
     saveReport(){
-      if (!this.report.name || !this.report.description) {
+      let json = {
+        name: "Alan Garcia",
+        type:"infringement",
+        description: this.description,
+        date: new Date().toISOString().split('T')[0],
+      };
+      this.reportsApi.createReport(json).then((data) => {
+        console.log(data);
+      });
+      if (!this.report.description) {
         this.submitted = true;
         return;
       }
@@ -76,13 +87,8 @@ export default {
     <!--REPORT-DIALOG START-->
     <pv-dialog v-model:visible="reportDialog" :style="{width: '450px'}" header="Report Details" :modal="true" class="p-fluid">
       <div class="field">
-        <label for="name" class="mr-5">Name</label>
-        <input id="name" v-model.trim="report.name" required="true" autofocus :invalid="submitted && !report.name" class="p-inputtext"/>
-        <small class="p-error" v-if="submitted && !report.name">Name is required.</small>
-      </div>
-      <div class="field">
         <label for="description">Description</label>
-        <textarea id="description" v-model="report.description" required="true" rows="3" cols="20" class="p-inputtext" />
+        <textarea id="description" v-model="description" required="true" rows="3" cols="20" class="p-inputtext" />
         <small class="p-error" v-if="submitted && !report.description">Description is required.</small>
       </div>
 
