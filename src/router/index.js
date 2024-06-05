@@ -26,10 +26,10 @@ const router  = createRouter({
         {path:'/:id/userprofile', component: userProfileComponent},
         {path:'/:id/vehicles-carrier', component: DisplayVehiclesCarrierComponent },
         {path:'/:id/vehicles-businessman', component: DisplayVehiclesBusinessmanComponent },
-        { path: '/:id/report/businessman', component: BusinessmanReportComponent},
-        { path: '/:id/report/carrier', component: CarrierReportComponent},
-        { path: '/:id/organization', component: OrganizationShipmentComponent},
-        { path: '/:id/organization/view', component: ViewShipmentsComponent},
+        {path: '/:id/report/businessman', component: BusinessmanReportComponent},
+        {path: '/:id/report/carrier', component: CarrierReportComponent},
+        {path: '/:id/organization', component: OrganizationShipmentComponent},
+        {path: '/:id/organization/view', component: ViewShipmentsComponent},
 
 
     ]
