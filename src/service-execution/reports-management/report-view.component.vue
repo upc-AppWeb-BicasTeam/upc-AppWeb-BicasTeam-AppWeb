@@ -31,12 +31,12 @@ export default {
 </script>
 
 <template>
-    <div class="p-5 container z-1 header">
-      <div class="text-900 font-medium text-xl mb-3">
-        <h1>Reports</h1>
+    <div class="container z-1 header container-report-businessman">
+      <div class="text-100 font-medium text-xl container-info">
+        <h1 class="text-100">Reports</h1>
         <p>Driver report list</p>
       </div>
-      <div class="p-5 card-container">
+      <div class="card-container-1">
         <pv-card>
           <template #content>
             <pv-table :value="reports">
@@ -52,19 +52,36 @@ export default {
 
 <style>
 
-.container{
-  max-width: 1500px;
-  margin-left: 10rem;
-  color: #495057;
+.container-report-businessman{
+  display: flex !important;
+  align-content: flex-start !important;
+  align-items: flex-start !important;
+  margin-left: 0;
+}
+.container {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-left: 11rem;
 }
 
-.header {
-  margin-bottom: 20px; /* Espacio entre el encabezado y el pv-card */
+.card-container-1{
+  margin-right: 1rem;
 }
 
-.card-container {
-  align-self: center; /* Centrar el pv-card horizontalmente */
+@media (max-width: 860px){
+  .container{
+    margin-left: 0;
+  }
+
+  .container-info{
+    margin-top: 4rem;
+    margin-left: 1rem;
+  }
+
+  .card-container-1{
+    margin-left: 1rem;
+  }
 }
 </style>

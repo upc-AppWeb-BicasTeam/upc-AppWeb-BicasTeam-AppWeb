@@ -20,11 +20,11 @@ export default {
 </script>
 
 <template>
-  <div class="p-5 flex flex-row flex-auto container z-1">
+  <div class="p-5 flex flex-row flex-auto container z-1 container-data-view">
     <div>
-      <div class="text-900 font-medium text-xl mb-3">Profile</div>
-        <p class="m-0 mb-4 p-0 text-600 line-height-3 mr-3">
-          Odio euismod lacinia at quis risus sed vulputate odio. Non nisi est sit amet. Egestas integer eget aliquet nibh praesent tristique magna.
+      <div class="text-100 font-medium text-xl mb-3">Profile</div>
+        <p class="m-0 mb-4 p-0 text-100 line-height-3 mr-3">
+          Change your profile settings.
         </p>
         <div class="surface-card p-4 shadow-2 border-round">
           <div class="grid formgrid p-fluid">
@@ -97,6 +97,12 @@ export default {
 
 .flex-row{
   justify-content: flex-end;
+}
+
+@media(max-width: 860px){
+  .container-data-view{
+    margin-top: 4rem;
+  }
 }
 
 

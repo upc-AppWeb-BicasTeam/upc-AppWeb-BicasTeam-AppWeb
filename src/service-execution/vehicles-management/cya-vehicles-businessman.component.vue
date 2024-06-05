@@ -55,7 +55,7 @@ export default {
 }
 </script>
 <template>
-  <div class="container">
+  <div class="container container-vehicles-businessman">
     <div>
       <h1 class="title">Vehicles</h1>
       <div class="button-group">
@@ -103,6 +103,7 @@ export default {
   flex-direction: column;
   gap: 1rem;
   z-index: 1;
+  align-items: flex-start;
 }
 
 .title{
@@ -112,6 +113,7 @@ export default {
 .card{
   background: #ffffff;
   margin-left: 2rem;
+  width: 300px;
 }
 
 .p-button{
@@ -151,5 +153,24 @@ export default {
 
 .title-card{
   color: #0d0d0d;
+}
+
+@media (max-width: 860px){
+  .container{
+    margin-top: 3rem !important;
+  }
+
+  .container-vehicles-businessman{
+    margin-right: 2rem !important;
+  }
+}
+
+@media (max-width: 375px){
+  .container-vehicles-businessman{
+    margin-right: 1rem;
+  }
+  .card{
+    width: 250px;
+  }
 }
 </style>

@@ -9,8 +9,6 @@ export default {
   components: {
     HomeBusinessman,
     Sidebar
-
-
   },
 }
 </script>
@@ -18,12 +16,15 @@ export default {
 <template>
   <div class="container">
     <sidebar></sidebar>
-    <home-businessman/>
+    <home-businessman class="home"/>
   </div>
 </template>
 
 <style>
 .container{
   display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 </style>

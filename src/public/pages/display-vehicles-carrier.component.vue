@@ -19,5 +19,6 @@ export default defineComponent({
 <style scoped>
 .container{
   display: flex;
+  align-items: flex-start;
 }
 </style>
