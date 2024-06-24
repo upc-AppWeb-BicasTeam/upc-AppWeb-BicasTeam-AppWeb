@@ -1,5 +1,6 @@
 <script>
 import { HomeApiService } from "../services/home-api.service.js";
+import {IamApiService} from "../../iam/services/iam-api.service.js";
 
 export default {
   name: "home-driver",
@@ -8,9 +9,19 @@ export default {
     return {
       activities: [],
       deliveries: [],
+      id: this.$route.params.id,
+      api: new IamApiService(),
+      name:'',
+      lastName:'',
+      type:'',
     };
   },
   created() {
+    this.api.findUserById(this.id).then(data=>{
+      this.type = data.data.type;
+      this.name = data.data.name;
+      this.lastName = data.data.lastName
+    })
     const apiService = new HomeApiService();
     apiService.getAllActivitiesDriver().then(response => {
       this.activities = response.data;
@@ -26,7 +37,7 @@ export default {
 <template>
   <div class="p-grid p-dir-col z-1 container justify-content-center align-content-center">
     <div class="p-col image-title-container">
-      <h1>Welcome, David Doe!</h1>
+      <h1>Welcome, {{name}} {{lastName}}</h1>
       <img src="../../public/assets/logo.png" id="icon" alt="User Icon" class="img-home">
     </div>
     <div class="p-grid p-dir-col p-col card-container card-container-home-driver justify-content-center">

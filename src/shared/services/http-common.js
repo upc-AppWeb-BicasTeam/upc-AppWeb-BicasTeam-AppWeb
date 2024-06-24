@@ -5,7 +5,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 * @type {axios. AxiosInstance}
 * */
 const http = axios.create({
-    baseURL : "https://my-json-server.typicode.com/upc-AppWeb-BicasTeam",
+    baseURL : "https://webapp-240624021848.azurewebsites.net/",
     headers:{'Content-type':'application/json'}
 });
 

@@ -2,17 +2,16 @@ import http from "../../../shared/services/http-common.js";
 
 export class VehiclesApiService{
     getAllVehicles() {
-        return http.get('/moviGestion-cya/vehicle');
+        return http.get('/vehicle');
     }
     getVehicleById(id){
-        return http.get(`/moviGestion-cya/vehicle?id=${id}`)
+        return http.get(`/vehicle/${id}`);
+    }
+    addVehicle(vehicle){
+        return http.post("/vehicle", vehicle);
     }
     getUsers(){
         return http.get('/moviGestion-iam/users');
-    }
-
-    addVehicle(vehicle){
-        return http.post("/moviGestion-cya/vehicle",vehicle);
     }
 
     deleteVehicle(id){
@@ -24,6 +23,6 @@ export class VehiclesApiService{
     }
 
     getVehiclesById1(id){
-        return http.get(`/moviGestion-cya/vehicle?id=${id}`)
+        return http.get(`/vehicle/${id}`);
     }
 }

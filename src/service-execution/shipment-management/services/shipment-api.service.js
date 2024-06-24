@@ -1,10 +1,19 @@
 import http from "../../../shared/services/http-common.js";
 
 export class ShipmentApiService{
-    findUserByID(id){
-        return http.get(`/moviGestion-iam/users?id=${id}`)
+    createShipment(jsonShipment){
+        return http.post('/Shipment', jsonShipment)
+    }
+    getShipmentById(id){
+        return http.get(`/Shipment/${id}`);
+    }
+    getShipmentByUserId(userId){
+        return http.get(`/Shipment/users/${userId}`);
     }
     getAllShipments(){
-        return http.get('/moviGestion-cya/shipment')
+        return http.get('/Shipment')
+    }
+    findUserByID(id){
+        return http.get(`/Profile/${id}`)
     }
 }

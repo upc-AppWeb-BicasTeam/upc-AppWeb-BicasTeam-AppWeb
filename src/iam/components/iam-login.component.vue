@@ -20,7 +20,8 @@ export default {
     login(){
 
       this.iamApi.findUserWithEmailAndPassword(this.email,this.password).then(data=>{
-        const info = data.data[0];
+        console.log(data.data);
+        const info = data.data;
         if (info === undefined){
           this.error = true; this.error_msg = "Email or Password incorrect"
         }else{

@@ -1,7 +1,6 @@
 <script>
 import {IamApiService} from "../../iam/services/iam-api.service.js";
 
-
 export default {
   name: "sidebar",
   data() {
@@ -19,9 +18,9 @@ export default {
     window.addEventListener("resize", this.handleResize);
     this.handleResize();
     this.api.findUserById(this.id).then(data=>{
-      this.type = data.data[0].type;
-      this.name = data.data[0].name;
-      this.lastName = data.data[0].lastName
+      this.type = data.data.type;
+      this.name = data.data.name;
+      this.lastName = data.data.lastName
     })
   },
   beforeDestroy() {
