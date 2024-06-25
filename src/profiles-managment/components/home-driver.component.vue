@@ -31,6 +31,18 @@ export default {
       this.deliveries = response.data;
     });
   },
+  methods: {
+    formatDate(dateString) {
+      const date = new Date(dateString);
+      return date.toLocaleString();
+    },
+    goToDriverReport() {
+      this.$router.push(`/${this.id}/report/carrier`);
+    },
+    goToDriverDeliveries() {
+      this.$router.push(`/${this.id}/organization/view`);
+    }
+  }
 }
 </script>
 
@@ -46,14 +58,14 @@ export default {
           <i class="fa fa-list"></i>Today's activities
         </template>
         <template #content>
-          <div v-for="activity in activities" :key="activity.id">
+          <div v-for="activity in activities.slice(1, 4)" :key="activity.id">
             <h3>{{ activity.description }}</h3>
             <p>{{ activity.type }}</p>
-            <p>{{ activity.dateTime.date }} - {{ activity.dateTime.time }}</p>
+            <p>{{ formatDate(activity.createdAt) }}</p>
           </div>
         </template>
         <template #footer>
-          <pv-button>See More</pv-button>
+          <pv-button @click="goToDriverReport">See More</pv-button>
         </template>
       </pv-card>
       <pv-card v-if="deliveries.length" class="p-sm-12 p-md-12 p-lg-6">
@@ -63,15 +75,16 @@ export default {
         <template #content>
           <div v-for="delivery in deliveries" :key="delivery.id">
             <h3>{{ delivery.destiny }}</h3>
-            <p>Responsible: {{ delivery.description }}</p>
-            <p>Start time: {{ delivery.dateTime.date }}</p>
-            <p>Delivery time: {{ delivery.status }}</p>
+            <p>Package: {{ delivery.description }}</p>
+            <p>Start time: {{ formatDate(delivery.createdAt) }}</p>
+            <p>Delivery status: {{ delivery.status }}</p>
           </div>
         </template>
         <template #footer>
-          <pv-button>See More</pv-button>
+          <pv-button @click="goToDriverDeliveries">See More</pv-button>
         </template>
       </pv-card>
+
     </div>
   </div>
 </template>

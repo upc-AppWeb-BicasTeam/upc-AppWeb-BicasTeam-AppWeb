@@ -49,13 +49,15 @@ export default {
     },
     async errors() {
       // Check if email is already registered
-      await this.iamApi.findUserWithEmail(this.email).then((data) => {
+      try{await this.iamApi.findUserWithEmail(this.email).then((data) => {
+        console.log(data)
         const info = data.data;
-        if (info[0] !== undefined) {
+        if (info !== undefined) {
           this.error = true;
           this.error_msg = "Email already registered";
         }
-      });
+      });}catch (e){console.log(e)}
+
 
       // Check if privacy policy is accepted
       if (!this.privacityPolicy) {

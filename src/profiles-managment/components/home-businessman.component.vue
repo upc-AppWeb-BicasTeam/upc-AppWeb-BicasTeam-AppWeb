@@ -34,6 +34,21 @@ export default {
       this.deliveries = response.data;
     });
   },
+  methods: {
+    formatDate(dateString) {
+      const date = new Date(dateString);
+      return date.toLocaleString();
+    },
+    goToBusinessmanReport() {
+      this.$router.push(`/${this.id}/report/businessman`);
+    },
+    goToBusinessmanDeliveries() {
+      this.$router.push(`/${this.id}/organization`);
+    },
+    goToBusinessmanvehicle() {
+      this.$router.push(`/${this.id}/vehicles-businessman`);
+    }
+  }
 }
 </script>
 
@@ -46,17 +61,17 @@ export default {
     <div class="p-grid p-dir-col p-col card-container-business justify-content-center">
       <pv-card v-if="activities.length" class="p-sm-12 p-md-12 p-lg-6">
         <template #title>
-          <i class="fa fa-list"></i>Today's activities
+          <i class="fa fa-list"></i>Today's reports
         </template>
         <template #content>
-          <div v-for="activity in activities.slice(0, 3)" :key="activity.id">
+          <div v-for="activity in activities.slice(1, 4)" :key="activity.id">
             <h3>{{ activity.description }}</h3>
             <p>{{ activity.type }}</p>
-            <p>{{ activity.dateTime.date }} - {{ activity.dateTime.time }}</p>
+            <p>{{ formatDate(activity.createdAt) }}</p>
           </div>
         </template>
         <template #footer>
-          <pv-button>See More</pv-button>
+          <pv-button @click="goToBusinessmanReport">See More</pv-button>
         </template>
       </pv-card>
       <pv-card v-if="deliveries.length" class="p-sm-12 p-md-12 p-lg-6">
@@ -66,32 +81,35 @@ export default {
         <template #content>
           <div v-for="delivery in deliveries.slice(0, 2)" :key="delivery.id">
             <h3>{{ delivery.destiny }}</h3>
-            <p>Responsible: {{ delivery.description }}</p>
-            <p>Start time: {{ delivery.dateTime.date }}</p>
-            <p>Delivery time: {{ delivery.status }}</p>
+            <p>Package: {{ delivery.description }}</p>
+            <p>Start time: {{ formatDate(delivery.createdAt) }}</p>
+            <p>Delivery status: {{ delivery.status }}</p>
           </div>
         </template>
         <template #footer>
-          <pv-button>See More</pv-button>
+          <pv-button @click="goToBusinessmanDeliveries">See More</pv-button>
         </template>
       </pv-card>
     </div>
     <div class="card-container3">
       <pv-card v-if="conditions.length" class="p-sm-12 p-md-12 p-lg-6">
         <template #title>
-          <i class="fa fa-signal"></i>Condition of drivers and vehicles
+          <i class="fa fa-signal"></i>Technical vehicle information.
         </template>
         <template #content>
-          <div v-for="condition in conditions.slice(0, 1)" :key="condition.id">
-            <p>Model: {{ condition.model }}</p>
-            <p>License Plate: {{ condition.licensePlate }}</p>
-            <p>Serial Number: {{ condition.serialNumber }}</p>
+          <div class="row">
+            <div v-for="condition in conditions.slice(0, 3)" :key="condition.id" class="col-6">
+              <p>Model: {{ condition.model }}</p>
+              <p>License Plate: {{ condition.licensePlate }}</p>
+              <p>Serial Number: {{ condition.serialNumber }}</p>
+            </div>
           </div>
         </template>
         <template #footer>
-          <pv-button>See More</pv-button>
+          <pv-button @click="goToBusinessmanvehicle">See More</pv-button>
         </template>
       </pv-card>
+
     </div>
   </div>
 </template>
@@ -161,5 +179,17 @@ h1{
     margin-right: 1.5rem;
   }
 }
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-6 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
 
 </style>
