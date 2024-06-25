@@ -15,7 +15,7 @@ export class VehiclesApiService{
     }
 
     deleteVehicle(id){
-        return http.delete(`/moviGestion-cya/vehicle/${id}`);
+        return http.delete(`/vehicle/${id}`);
     }
 
     assignVehicleToCarrier(vehicleId,carrierId){

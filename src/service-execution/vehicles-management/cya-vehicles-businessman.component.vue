@@ -23,10 +23,10 @@ export default {
     };
   },
   created(){
-    this.getData(this.id);
+    this.getDataVehicles();
   },
   methods: {
-    addVehicle() {  
+    addVehicle() {
       this.vehiclesApi.addVehicle(this.newVehicle)
           .then(response => {
             this.newVehicle = { model: '', licensePlate: '', serialNumber: '' };
@@ -38,22 +38,16 @@ export default {
             this.deleteVehicleId = '';
           });
     },
-    getData(userId) {
-      this.iamApi.findUserById(userId)
-          .then(userResponse => {
-            this.user = userResponse.data[0];
-            let vehiclePromises = this.user.vehicles.map(vehicleUser => {
-              return this.vehiclesApi.getVehiclesById1(vehicleUser.idVehicle);
-            });
-            Promise.all(vehiclePromises)
-                .then(vehicleResponses => {
-                  this.vehicles = vehicleResponses.map(response => response.data[0]);
-                });
+    getDataVehicles() {
+      this.vehiclesApi.getAllVehicles()
+          .then(vehicleResponses => {
+            this.vehicles = vehicleResponses.data;
           });
-    }
+    },
   },
 }
 </script>
+
 <template>
   <div class="container container-vehicles-businessman">
     <div>

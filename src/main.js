@@ -25,6 +25,8 @@ import Row from "primevue/row";
 import FileUpload from "primevue/fileupload";
 import Calendar from "primevue/calendar";
 import Message from "primevue/message";
+import i18n from "./i18n.js";
+import SelectButton from "primevue/selectbutton";
 
 const app = createApp(App);
 
@@ -47,4 +49,6 @@ app.use(PrimeVue,{ripple:true})
     .component('pv-file-upload', FileUpload)
     .component('pv-message', Message)
     .component('pv-calendar', Calendar)
-app.mount('#app')
+    .component('pv-select-button', SelectButton)
+app.mount('#app');
+app.use(i18n);
