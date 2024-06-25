@@ -22,11 +22,16 @@ export default {
     async getDataReport() {
       const response = await this.reportsApi.getAllReports();
       const reports = response.data;
+
       for (let report of reports) {
-        const userResponse = await this.reportsApi.findUserByID(report['id-user']);
-        console.log(userResponse);
-        const user = userResponse.data[0];
-        report.name = `${user.name} ${user.lastName}`;
+        const userResponse = await this.reportsApi.findUserByID(report.userId);
+
+        if (userResponse && userResponse.data && userResponse.data.length > 0) {
+          const user = userResponse.data[0];
+          report.name = `${user.name} ${user.lastName}`;
+        } else {
+          report.name = 'Usuario no encontrado';
+        }
       }
       this.reports = reports;
       console.log(this.reports);
@@ -42,7 +47,7 @@ export default {
     },
     saveReport(){
       let json = {
-        name: "Alan Garcia",
+        name: "Peter Castle",
         type:"infringement",
         description: this.description,
         date: new Date().toISOString().split('T')[0],
@@ -78,7 +83,7 @@ export default {
         <pv-table :value="reports">
           <pv-column field="name" header="Driver’s Name"></pv-column>
           <pv-column field="description" header="Description"></pv-column>
-          <pv-column field="dateTime.date" header="Date"></pv-column>
+          <pv-column field="createdAt" header="Date"></pv-column>
         </pv-table>
       </template>
     </pv-card>

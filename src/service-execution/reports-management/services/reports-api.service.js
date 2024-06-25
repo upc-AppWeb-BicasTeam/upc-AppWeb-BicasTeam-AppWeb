@@ -1,13 +1,13 @@
 import http from "../../../shared/services/http-common.js";
 
 export class ReportsApiService{
-    createReport(jsonUser){
-        return http.post('/moviGestion-cya/reports',jsonUser)
-    }
     findUserByID(id){
-        return http.get(`/moviGestion-iam/users?id=${id}`)
+        return http.get(`/profile/${id}`)
+    }
+    createReport(jsonUser){
+        return http.post('/report')
     }
     getAllReports() {
-        return http.get('/moviGestion-cya/reports')
+        return http.get('/report')
     }
 }
