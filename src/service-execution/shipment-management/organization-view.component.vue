@@ -1,8 +1,9 @@
 <script>
-import {ShipmentApiService} from "../../service-execution/shipment-management/services/shipment-api.service.js";
+import {ShipmentApiService} from "./services/shipment-api.service.js";
 
 export default {
-  name: "organization-shipment",
+  name: "organization-view",
+  title: "Organization View",
   data(){
     return {
       shipmentsApi: new ShipmentApiService(),
@@ -19,7 +20,6 @@ export default {
     async getDataShipment(){
       const response = await this.shipmentsApi.getAllShipments();
       const shipments = response.data;
-      // Nombre y apellido del conductor por cada shipment
       for (let shipment of shipments) {
         const userResponse = await this.shipmentsApi.findUserByID(shipment['id-user']);
         console.log(userResponse);
@@ -42,13 +42,13 @@ export default {
 </script>
 
 <template>
-  <div class="flex align-content-start flex wrap">
-    <div class="ml-3">
-      <h1>Organization</h1>
+  <div class="container z-1 header container-shipment">
+    <div class="text-100 font-medium text-xl container-info">
+      <h1 class="text-100">Organization</h1>
       <h3>Click in the list to see details</h3>
     </div>
   </div>
-  <div>
+  <div class="card-container-1">
     <pv-card>
       <template #content>
         <pv-table :value="shipments" @row-click="showShipmentDetails($event.data)">
@@ -80,8 +80,37 @@ export default {
 
 <style>
 
-.field input{
-  flex-grow: 1;
+.container-shipment{
+  display: flex !important;
+  align-content: flex-start !important;
+  align-items: flex-start !important;
+  margin-left: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-left: 11rem;
+}
+
+.card-container-1{
+  margin-right: 1rem;
+}
+
+@media (max-width: 860px){
+  .container{
+    margin-left: 0;
+  }
+
+  .container-info{
+    margin-top: 4rem;
+    margin-left: 1rem;
+  }
+
+  .card-container-1{
+    margin-left: 1rem;
+  }
 }
 
 .dialog-style .p-dialog-content {

@@ -1,8 +1,8 @@
 <script>
-import {ShipmentApiService} from "../../service-execution/shipment-management/services/shipment-api.service.js";
-
+import {ShipmentApiService} from "./services/shipment-api.service.js";
 export default {
-  name: "organization-shipment",
+  name: "organization-businessman",
+  title: "Organization Businessman",
   data(){
     return {
       shipmentsApi: new ShipmentApiService(),
@@ -19,19 +19,18 @@ export default {
   },
   methods: {
     async getDataShipment(){
-    const response = await this.shipmentsApi.getAllShipments();
-    const shipments = response.data;
-  // Nombre y apellido del conductor por cada shipment
-    for (let shipment of shipments) {
-      const userResponse = await this.shipmentsApi.findUserByID(shipment['id-user']);
-      console.log(userResponse);
-      const user = userResponse.data[0];
-      shipment.driverName = `${user.name} ${user.lastName}`;
-    }
-    this.shipments = shipments;
-    console.log(this.shipments);
+      const response = await this.shipmentsApi.getAllShipments();
+      const shipments = response.data;
+      for (let shipment of shipments) {
+        const userResponse = await this.shipmentsApi.findUserByID(shipment['id-user']);
+        console.log(userResponse);
+        const user = userResponse.data[0];
+        shipment.driverName = `${user.name} ${user.lastName}`;
+      }
+      this.shipments = shipments;
+      console.log(this.shipments);
 
-  },
+    },
     showShipmentDetails(shipment) {
       this.selectedShipment = shipment;
       this.shipmentDetailsDialog = true;
@@ -75,16 +74,16 @@ export default {
 </script>
 
 <template>
-  <div class="flex align-content-start flex wrap">
-    <div class="ml-3">
-      <h1>Organization</h1>
+  <div class="container z-1 header container-shipment">
+    <div class="text-100 font-medium text-xl container-info">
+      <h1 class="text-100">Organization</h1>
       <h3>Click in the list to see details</h3>
     </div>
-      <div class="flex justify-content-end">
-        <pv-button class="mr-2" label="Add" icon="pi pi-plus" severity="success" @click="newItem"></pv-button>
-      </div>
+    <div class="flex justify-content-end">
+      <pv-button label="Add" icon="pi pi-plus" severity="success" class="mr-5" @click="newItem"/>
+    </div>
   </div>
-  <div>
+  <div class="card-container-1">
     <pv-card>
       <template #content>
         <pv-table :value="shipments" @row-click="showShipmentDetails($event.data)">
@@ -110,7 +109,7 @@ export default {
 
     <template #footer>
 
-        <pv-button label="Close" icon="pi pi-times" text @click="hideShipmentDetailsDialog" class="cancel-button"/>
+      <pv-button label="Close" icon="pi pi-times" text @click="hideShipmentDetailsDialog" class="cancel-button"/>
 
     </template>
   </pv-dialog>
@@ -155,11 +154,41 @@ export default {
 </template>
 
 <style>
-.field{
+.container-shipment{
+  display: flex !important;
+  align-content: flex-start !important;
+  align-items: flex-start !important;
+  margin-left: 0;
+}
+.container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-left: 11rem;
+}
+
+.card-container-1{
+  margin-right: 1rem;
+}
+
+@media (max-width: 860px){
+  .container{
+    margin-left: 0;
+  }
+
+  .container-info{
+    margin-top: 4rem;
+    margin-left: 1rem;
+  }
+
+  .card-container-1{
+    margin-left: 1rem;
+  }
+}
+.field label {
+  font-weight: bold;
+  color: #333;
 }
 .field input{
   flex-grow: 1;
